@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
 
 	void IncrementRisk() {
 		int currentRisk = System.Convert.ToInt32(riskText.text);
-		networkText.text = (currentRisk + currentStoryElement.dangerAmount).ToString();
+		riskText.text = (currentRisk + currentStoryElement.dangerAmount).ToString();
 	}
 
 	void UpdateToNewStoryElement() {
