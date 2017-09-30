@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+	const int MAX_TIMER_VALUE = 100;
+
 	public GameObject ChoiceUI;
 	public GameObject ConsequenceUI;
 
 	public Text descriptionText;
 	public Text networkText;
+	public Text riskText;
 	public Text consequenceText;
 	public Text daysText;
 	public GameObject actionImage;
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour {
 
 		audioSourceComponent = gameObject.GetComponent<AudioSource>();
 
-		timerBar.maxValue = 5;
+		timerBar.maxValue = MAX_TIMER_VALUE;
 		timerBar.value = timerBar.maxValue;
 	}
 
@@ -80,7 +83,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (currentGameState == GameState.Reading || currentGameState == GameState.Arrested) {
+		if (currentGameState == GameState.Reading) {
 			if (Input.GetMouseButtonDown(0)) {
 				SwitchToChoiceView();
 			}
@@ -92,6 +95,8 @@ public class GameManager : MonoBehaviour {
 		IncrementNetwork();
 		IncrementRisk();
 		DisplayConsequenceText();
+
+		musicScript.PlayMusicForLevel(riskAmount);
 	}
 
 	public void DoNothing() {
@@ -101,6 +106,8 @@ public class GameManager : MonoBehaviour {
 		if (cumulatedInactions >= 2) {
 			DecrementNetwork();
 		}
+
+		musicScript.PlayMusicForLevel(riskAmount);
 	}
 
 	void IncrementNetwork() {
@@ -110,6 +117,7 @@ public class GameManager : MonoBehaviour {
 
 	void IncrementRisk() {
 		riskAmount += currentStoryElement.dangerAmount;
+		riskText.text = riskAmount.ToString();
 	}
 
 	void DecrementRisk() {
@@ -118,6 +126,7 @@ public class GameManager : MonoBehaviour {
 		if (riskAmount < 0) {
 			riskAmount = 0;
 		}
+		riskText.text = riskAmount.ToString();
 	}
 
 	void DecrementNetwork() {
@@ -160,8 +169,6 @@ public class GameManager : MonoBehaviour {
 	void SwitchToChoiceView() {
 
 		UpdateToNewStoryElement();
-
-		musicScript.PlayMusicForLevel(riskAmount);
 		
 		if (currentPitfall != null) {
 			ChangeToArrestedState();
@@ -176,7 +183,7 @@ public class GameManager : MonoBehaviour {
 			descriptionText.text = currentStoryElement.description;
 		}
 
-		timerBar.value = 100;
+		timerBar.value = MAX_TIMER_VALUE;
 	}
 
 	void ChangeToReadingState() {
