@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	public Text descriptionText;
 	public Text networkText;
 	public Text consequenceText;
+	public GameObject actionImage;
+	private Image actionImageComponent;
 
 	public Slider timerBar;
 
@@ -42,6 +44,9 @@ public class GameManager : MonoBehaviour {
         }
 
 		ChangeToReadingState();
+
+		actionImageComponent = actionImage.GetComponent<Image>();
+		actionImage.SetActive(false);
 
 		timerBar.maxValue = 10;
 		timerBar.minValue = 0;
@@ -99,7 +104,13 @@ public class GameManager : MonoBehaviour {
 	void SwitchToChoiceView() {
         ChangeToChoiceState();
 
+
 		UpdateToNewStoryElement();
+
+		actionImage.SetActive(true);
+		Sprite newSprite = Resources.Load(currentStoryElement.picture, typeof(Sprite)) as Sprite;
+		actionImageComponent.sprite = newSprite;
+
 		descriptionText.text = currentStoryElement.description;
 
 		timerBar.value = 100;

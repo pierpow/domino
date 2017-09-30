@@ -7,4 +7,5 @@ public class StoryElement
     public string description;
     public int networkBonus;
     public string consequenceDescription;
+    public string picture;
 }
