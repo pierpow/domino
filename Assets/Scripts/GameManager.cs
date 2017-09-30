@@ -36,12 +36,16 @@ public class GameManager : MonoBehaviour {
 	{
 		timerBar.value -= Time.deltaTime;
 		if (timerBar.value <= 0) {
-			ChangeLevelAfterAccept();
+			SkipLevel();
 		}
 	}
 
 	public void ChangeLevelAfterAccept() {
 		IncrementNetwork();
+		ChangeLevel();
+	}
+
+	public void SkipLevel() {
 		ChangeLevel();
 	}
 

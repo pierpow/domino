@@ -211,6 +211,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114363541592607224, guid: bcb9cdd0e9437473091939afcec6882b,
+        type: 2}
+      propertyPath: m_Text
+      value: "Vous \xEAtes blablabla..."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcb9cdd0e9437473091939afcec6882b, type: 2}
   m_IsPrefabParent: 0
@@ -959,8 +964,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299, y: 184.6}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -109.15, y: 183.9}
+  m_SizeDelta: {x: 539.7, y: 21.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324590037
 MonoBehaviour:
