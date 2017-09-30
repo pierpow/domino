@@ -1,4 +1,12 @@
 {
-    "id": 1,
-    "description": "C'est le premier event !"
+    "storyElements": [
+        {
+            "id": 1,
+            "description": "C'est le premier event !"
+        },
+        {
+            "id": 2,
+            "description": "C'est le second event !"
+        }
+    ]
 }

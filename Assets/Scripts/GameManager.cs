@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour {
 
 	public Text descriptionText;
 
+	private Story story;
+
 	void Awake()
 	{
-		Story story = new Story();
+		story = new Story();
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
 
@@ -21,7 +23,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Cannot load game data!");
         }
 
-		descriptionText.text = story.description;
+		descriptionText.text = story.storyElements[1].description;
 	}
 
 	// Use this for initialization

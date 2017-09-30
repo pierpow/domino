@@ -7,6 +7,5 @@ using UnityEngine;
 [Serializable]
 public class Story
 {
-    public int id;
-    public string description;
+    public StoryElement[] storyElements;
 }
