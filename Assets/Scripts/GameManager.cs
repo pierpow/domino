@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 		if (currentGameState == GameState.Choosing) {
 			timerBar.value -= Time.deltaTime;
 			if (timerBar.value <= 0) {
-				SkipLevel();
+				DoNothing();
 			}
 		}
 	}
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour {
 		SwitchToConsequenceText();
 	}
 
-	public void SkipLevel() {
+	public void DoNothing() {
 		SwitchToConsequenceText();		
 	}
 
