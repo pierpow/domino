@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public Text networkText;
 	public Text consequenceText;
 	public Text riskText;
+	public Text daysText;
 	public GameObject actionImage;
 	private Image actionImageComponent;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	public StoryElement currentStoryElement;
 
 	private int cumulatedInactions = 0;
+	private int dayNumber = 0;
 
 	public enum GameState {
 		Choosing,
@@ -94,6 +96,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UpdateToNewStoryElement() {
+		dayNumber += 1;
+		daysText.text = dayNumber.ToString();
+
 		int numberOfStoryElements = story.storyElements.Length;
 		int level = Random.Range(0, numberOfStoryElements);
 		currentStoryElement = story.storyElements[level];
@@ -110,7 +115,6 @@ public class GameManager : MonoBehaviour {
 
 	void SwitchToChoiceView() {
         ChangeToChoiceState();
-
 
 		UpdateToNewStoryElement();
 
