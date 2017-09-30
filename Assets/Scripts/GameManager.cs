@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour {
 
 	void DisplayConsequenceText() {
 		consequenceText.text = currentStoryElement.consequenceDescription;
+		consequenceText.text = string.Format(currentStoryElement.consequenceDescription, currentStoryElement.networkBonus);
 	}
 
 	void ChangeStateToReading() {

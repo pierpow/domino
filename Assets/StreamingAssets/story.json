@@ -2,22 +2,22 @@
     "storyElements": [
         {
             "description": "Affiches",
-            "consequenceDescription": "Vous posez des affiches. Vous gagnez {networkBonus} en réseau.",
+            "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
             "networkBonus": 7
         },
         {
             "description": "Tracts",
-            "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {networkBonus} en réseau.",
+            "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
             "networkBonus": 2
         },
         {
             "description": "Réunion",
-            "consequenceDescription": "Vous organisez une réunion. Vous gagnez {networkBonus} en réseau.",
+            "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
             "networkBonus": 2
         },
         {
             "description": "Article de blog",
-            "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {networkBonus} en réseau.",
+            "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
             "networkBonus": 20
         }
     ]
