@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour {
 	private int networkAmount = 0;
 	private int riskAmount = 0;
 	private int currentLevel = 0;
-	private List<int> unlockedStories = new List<int>(); // TODO
+	private List<int> unlockedStories = new List<int>();
+	private List<int> alreadyDoneStories = new List<int>();
 
 	public enum GameState {
 		Choosing,
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour {
 		DisplayConsequenceText();
 
 		unlockedStories.Add(currentStoryElement.unlocksElementId);
+		alreadyDoneStories.Add(currentStoryElement.id);
 
 		musicScript.PlayMusicForLevel(riskAmount);
 	}
@@ -145,7 +147,7 @@ public class GameManager : MonoBehaviour {
 		daysText.text = dayNumber.ToString();
 
         // TODO
-        int caughtScore = Random.Range(10, 100);
+        int caughtScore = Random.Range(40, 100);
 		if (riskAmount > caughtScore) {
 			currentStoryElement = null;
 			int numberOfPitfalls = story.pitfalls.Length;
@@ -160,8 +162,9 @@ public class GameManager : MonoBehaviour {
 			// This is HORRIBLE >:(
 			for (int i = 0; i < numberOfStoryElements; i++) {
 				StoryElement current = story.storyElements[i];
-				// If level achieved is high enough
-				if (current.prerequisites.level <= currentLevel) {
+				bool isLevelAchievedHighEnough = current.prerequisites.level <= currentLevel;
+				bool isStoryAlreadyDone = alreadyDoneStories.Contains(current.id) && current.prerequisites.doableOnce;
+				if (isLevelAchievedHighEnough && !isStoryAlreadyDone) {
 					if (!current.prerequisites.needsUnlock) {
 						// If it does not need any unlock, it's okay!
 						accessibleStoryElements.Add(current);

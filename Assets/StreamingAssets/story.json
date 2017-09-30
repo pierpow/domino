@@ -7,7 +7,7 @@
             "picture": "",
             "unlocksElementId": 2,
             "prerequisites": {
-                "notAlreadyDone": true,
+                "doableOnce": true,
                 "needsUnlock": false,
                 "level": 0
             },

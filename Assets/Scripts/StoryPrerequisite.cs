@@ -4,5 +4,6 @@ using System;
 public class StoryPrerequisite
 {
     public bool needsUnlock;
+    public bool doableOnce;
     public int level;
 }
