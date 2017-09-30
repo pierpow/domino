@@ -32,10 +32,12 @@
     "pitfalls": [
         {
             "picture": "police",
+            "sound": "game-over",
             "description": "La police vous arrête ! D:"
         },
         {
             "picture": "execution",
+            "sound": "game-over",
             "description": "Vous vous faites exécuter :'("
         }
     ]

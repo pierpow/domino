@@ -4,4 +4,5 @@ using System;
 public class Pitfall
 {
     public string description;
+    public string sound;
 }

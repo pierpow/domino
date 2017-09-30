@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour {
 	private int networkAmount = 0;
 	private int riskAmount = 0;
 
-	public SoundManager soundManager;
-
 	public enum GameState {
 		Choosing,
 		Arrested,
@@ -37,6 +35,8 @@ public class GameManager : MonoBehaviour {
 	};
 
 	public GameState currentGameState;
+
+	private AudioSource audioSourceComponent;
 
 	void Awake()
 	{
@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
 
 		actionImageComponent = actionImage.GetComponent<Image>();
 		actionImage.SetActive(false);
+
+		audioSourceComponent = gameObject.GetComponent<AudioSource>();
 
 		timerBar.maxValue = 5;
 		timerBar.value = timerBar.maxValue;
@@ -156,7 +158,7 @@ public class GameManager : MonoBehaviour {
 		if (currentPitfall != null) {
 			ChangeToArrestedState();
 			consequenceText.text = currentPitfall.description;
-			soundManager.gameOverSoundSource.Play();
+			audioSourceComponent.PlayOneShot ((AudioClip)Resources.Load (currentPitfall.sound));
 		} else {
             ChangeToChoiceState();
 			actionImage.SetActive(true);
