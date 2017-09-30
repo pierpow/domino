@@ -50,9 +50,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void ChangeLevel() {
-		int numberOfStoryElements = story.storyElements.Length;
-		int level = Random.Range(0, numberOfStoryElements);
-		currentStoryElement = story.storyElements[level];
+		UpdateToNewStoryElement();
 		descriptionText.text = currentStoryElement.description;
 
 		timerBar.value = 100;
@@ -61,5 +59,11 @@ public class GameManager : MonoBehaviour {
 	void IncrementNetwork() {
 		int currentNetwork = System.Convert.ToInt32(networkText.text);
 		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
+	}
+
+	void UpdateToNewStoryElement() {
+		int numberOfStoryElements = story.storyElements.Length;
+		int level = Random.Range(0, numberOfStoryElements);
+		currentStoryElement = story.storyElements[level];
 	}
 }
