@@ -1,12 +1,16 @@
 {
     "storyElements": [
         {
-            "id": 1,
-            "description": "C'est le premier event !"
+            "description": "Affiches"
         },
         {
-            "id": 2,
-            "description": "C'est le second event !"
+            "description": "Tracts"
+        },
+        {
+            "description": "Réunion"
+        },
+        {
+            "description": "Article de blog"
         }
     ]
 }
