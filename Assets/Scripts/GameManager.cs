@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DoNothing() {
-		DisplayConsequenceText();		
+		DisplayInactionText();		
 	}
 
 	void IncrementNetwork() {
@@ -86,8 +86,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void DisplayConsequenceText() {
-		consequenceText.text = currentStoryElement.consequenceDescription;
 		consequenceText.text = string.Format(currentStoryElement.consequenceDescription, currentStoryElement.networkBonus);
+		ChangeToReadingState();
+	}
+	void DisplayInactionText() {
+		consequenceText.text = "Vous ne faites rien.";
 		ChangeToReadingState();
 	}
 
