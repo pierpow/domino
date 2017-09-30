@@ -58,30 +58,26 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (currentGameState == GameState.Reading)
-		if (Input.GetMouseButtonDown(0)) {
-			// attention on skip pour le premier
-			SkipLevel();
-			ChangeStateToChoosing();
+		if (currentGameState == GameState.Reading) {
+			if (Input.GetMouseButtonDown(0)) {
+				ChangeStateToChoosing();
+				UpdateToNewStoryElement();
+				descriptionText.text = currentStoryElement.description;
+
+				timerBar.value = 100;
+			}
 		}
 	}
 
 	public void ChangeLevelAfterAccept() {
 		IncrementNetwork();
-		ChangeLevel();
+		ChangeStateToReading();
+		DisplayConsequenceText();
 	}
 
 	public void SkipLevel() {
-		ChangeLevel();
-	}
-
-	void ChangeLevel() {
-		UpdateToNewStoryElement();
-		descriptionText.text = currentStoryElement.description;
-
-		timerBar.value = 100;
-
-		ChangeStateToReading();
+		ChangeStateToReading();		
+		DisplayConsequenceText();
 	}
 
 	void IncrementNetwork() {
@@ -95,8 +91,11 @@ public class GameManager : MonoBehaviour {
 		currentStoryElement = story.storyElements[level];
 	}
 
-	void ChangeStateToReading() {
+	void DisplayConsequenceText() {
 		consequenceText.text = currentStoryElement.consequenceDescription;
+	}
+
+	void ChangeStateToReading() {
 		currentGameState = GameState.Reading;
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
