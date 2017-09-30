@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour {
 	{
 		timerBar.value -= Time.deltaTime;
 		if (timerBar.value <= 0) {
-			ChangeLevel();
+			ChangeLevelAfterAccept();
 		}
 	}
 
-	public void ChangeLevel() {
+	public void ChangeLevelAfterAccept() {
 		IncrementNetwork();
 
 		int numberOfStoryElements = story.storyElements.Length;
