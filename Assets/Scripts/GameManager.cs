@@ -177,6 +177,8 @@ public class GameManager : MonoBehaviour {
 			int numberOfAccessibleStoryElements = accessibleStoryElements.Count;
 			int level = Random.Range(0, numberOfAccessibleStoryElements);
 			currentStoryElement = accessibleStoryElements[level];
+
+			currentLevel++;
 		}
 	}
 

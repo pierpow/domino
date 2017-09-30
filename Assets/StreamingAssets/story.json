@@ -93,7 +93,7 @@
             "picture": "blog-article",
             "prerequisites": {
                 "needsUnlock": false,
-                "level": 0
+                "level": 3
             },
             "dangerAmount": 30,
             "networkBonus": 20
