@@ -19,7 +19,7 @@
             "consequenceDescription": "Malgré quelques résistances , vous arrivez à trouver des amis qui vous suivent dans votre combat",
             "picture": "",
             "prerequisites": {
-                "needsUnlock": true,
+                "needsUnlock": false,
                 "level": 0
             },
             "dangerAmount": 2,
@@ -31,7 +31,7 @@
             "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
             "picture": "posters",
             "prerequisites": {
-                "needsUnlock": true,
+                "needsUnlock": false,
                 "level": 0
             },
             "dangerAmount": 10,
@@ -43,7 +43,7 @@
             "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
             "picture": "tracts",
             "prerequisites": {
-                "needsUnlock": true,
+                "needsUnlock": false,
                 "level": 0
             },
             "dangerAmount": 4,
@@ -55,7 +55,7 @@
             "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
             "picture": "meeting",
             "prerequisites": {
-                "needsUnlock": true,
+                "needsUnlock": false,
                 "level": 0
             },
             "dangerAmount": 1,
@@ -67,7 +67,7 @@
             "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
             "picture": "blog-article",
             "prerequisites": {
-                "needsUnlock": true,
+                "needsUnlock": false,
                 "level": 0
             },
             "dangerAmount": 30,
