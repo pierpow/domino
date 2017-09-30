@@ -22,17 +22,11 @@ public class GameManager : MonoBehaviour {
         } else {
             Debug.LogError("Cannot load game data!");
         }
-
-		descriptionText.text = story.storyElements[1].description;
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void changeLevel() {
+		int numberOfStoryElements = story.storyElements.Length;
+		int level = Random.Range(0, numberOfStoryElements);
+		descriptionText.text = story.storyElements[level].description;
 	}
 }
