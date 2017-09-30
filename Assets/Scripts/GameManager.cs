@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour {
 	public StoryElement currentStoryElement;
 	public Pitfall currentPitfall;
 
+	public GameObject musicManager;
+	private MusicScript musicScript;
+
 	private int cumulatedInactions = 0;
 	private int dayNumber = 0;
 	private int networkAmount = 0;
@@ -40,6 +43,9 @@ public class GameManager : MonoBehaviour {
 
 	void Awake()
 	{
+		musicScript = musicManager.GetComponent<MusicScript>();
+		musicScript.PlayMusicForLevel(riskAmount);
+
 		story = new Story();
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
@@ -154,6 +160,8 @@ public class GameManager : MonoBehaviour {
 	void SwitchToChoiceView() {
 
 		UpdateToNewStoryElement();
+
+		musicScript.PlayMusicForLevel(riskAmount);
 		
 		if (currentPitfall != null) {
 			ChangeToArrestedState();
