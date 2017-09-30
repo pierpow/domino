@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 	private int networkAmount = 0;
 	private int riskAmount = 0;
 	private int currentLevel = 0;
-	private List<int> achievedStories = new List<int>(); // TODO
+	private List<int> unlockedStories = new List<int>(); // TODO
 
 	public enum GameState {
 		Choosing,
@@ -96,6 +96,8 @@ public class GameManager : MonoBehaviour {
 		IncrementRisk();
 		DisplayConsequenceText();
 
+		unlockedStories.Add(currentStoryElement.unlocksElementId);
+
 		musicScript.PlayMusicForLevel(riskAmount);
 	}
 
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour {
 
 			List<StoryElement> accessibleStoryElements = new List<StoryElement>();
 
-			// This is HORRIBLE! D: D: D:
+			// This is HORRIBLE >:(
 			for (int i = 0; i < numberOfStoryElements; i++) {
 				StoryElement current = story.storyElements[i];
 				// If level achieved is high enough
@@ -165,8 +167,7 @@ public class GameManager : MonoBehaviour {
 						accessibleStoryElements.Add(current);
 					} else {
 						// Otherwise, element has to be present in list
-						if (achievedStories.Contains(current.id)) {
-							Debug.Log("inside the fucking if");
+						if (unlockedStories.Contains(current.id)) {
 							accessibleStoryElements.Add(current);
 						}
 					}
