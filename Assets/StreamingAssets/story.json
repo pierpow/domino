@@ -3,21 +3,25 @@
         {
             "description": "Affiches",
             "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
-            "networkBonus": 7
+            "danger": 10,
+            "networkBonus": 14
         },
         {
             "description": "Tracts",
             "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
-            "networkBonus": 2
+            "danger": 4,
+            "networkBonus": 8
         },
         {
             "description": "Réunion",
             "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
-            "networkBonus": 2
+            "danger": 1,
+            "networkBonus": 4
         },
         {
             "description": "Article de blog",
             "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
+            "danger": 30,
             "networkBonus": 20
         }
     ]

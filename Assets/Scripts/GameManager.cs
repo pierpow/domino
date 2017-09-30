@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
 
 	public StoryElement currentStoryElement;
 
+	private int cumulatedInactions = 0;
+
 	public enum GameState {
 		Choosing,
 		Reading
