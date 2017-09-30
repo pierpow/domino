@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour {
 
-	public GameManager gameManager;
+	GameManager gameManager;
+
+	void Start() {
+		gameManager = FindObjectOfType<GameManager>();
+	}
 
 	public void AcceptEvent () {
 		gameManager.ChangeLevelAfterAccept();
