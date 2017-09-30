@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
 
 	private int cumulatedInactions = 0;
 	private int dayNumber = 0;
+	private int networkAmount = 0;
+	private int riskAmount = 0;
 
 	public enum GameState {
 		Choosing,
@@ -86,13 +88,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void IncrementNetwork() {
-		int currentNetwork = System.Convert.ToInt32(networkText.text);
-		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
+		networkAmount += currentStoryElement.networkBonus;
+		networkText.text = networkAmount.ToString();
 	}
 
 	void IncrementRisk() {
-		int currentRisk = System.Convert.ToInt32(riskText.text);
-		riskText.text = (currentRisk + currentStoryElement.dangerAmount).ToString();
+		riskAmount += currentStoryElement.dangerAmount;
+		riskText.text = riskAmount.ToString();
 	}
 
 	void UpdateToNewStoryElement() {
