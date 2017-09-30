@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour {
 
 	public void ChangeLevelAfterAccept() {
 		IncrementNetwork();
+		ChangeLevel();
+	}
 
+	void ChangeLevel() {
 		int numberOfStoryElements = story.storyElements.Length;
 		int level = Random.Range(0, numberOfStoryElements);
 		currentStoryElement = story.storyElements[level];
