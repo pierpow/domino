@@ -16,18 +16,18 @@ public class GameManager : MonoBehaviour {
 	public Text riskText;
 	public Text consequenceText;
 	public Text daysText;
+	public Slider timerBar;
 	public GameObject actionImage;
 	private Image actionImageComponent;
 
-	public Slider timerBar;
-
 	private Story story;
-
 	public StoryElement currentStoryElement;
 	public Pitfall currentPitfall;
 
 	public GameObject musicManager;
 	private MusicScript musicScript;
+
+	private AudioSource audioSourceComponent;
 
 	private int cumulatedInactions = 0;
 	private int dayNumber = 0;
@@ -41,8 +41,6 @@ public class GameManager : MonoBehaviour {
 	};
 
 	public GameState currentGameState;
-
-	private AudioSource audioSourceComponent;
 
 	void Awake()
 	{
