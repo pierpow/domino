@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Cannot load game data!");
         }
 
-		ChangeStateToReading();
+		ChangeToReadingState();
 
 		timerBar.maxValue = 10;
 		timerBar.minValue = 0;
@@ -60,24 +60,18 @@ public class GameManager : MonoBehaviour {
 	{
 		if (currentGameState == GameState.Reading) {
 			if (Input.GetMouseButtonDown(0)) {
-				ChangeStateToChoosing();
-				UpdateToNewStoryElement();
-				descriptionText.text = currentStoryElement.description;
-
-				timerBar.value = 100;
+				SwitchToChoiceView();
 			}
 		}
 	}
 
 	public void ChangeLevelAfterAccept() {
 		IncrementNetwork();
-		ChangeStateToReading();
-		DisplayConsequenceText();
+		SwitchToConsequenceText();
 	}
 
 	public void SkipLevel() {
-		ChangeStateToReading();		
-		DisplayConsequenceText();
+		SwitchToConsequenceText();		
 	}
 
 	void IncrementNetwork() {
@@ -96,15 +90,27 @@ public class GameManager : MonoBehaviour {
 		consequenceText.text = string.Format(currentStoryElement.consequenceDescription, currentStoryElement.networkBonus);
 	}
 
-	void ChangeStateToReading() {
+	void SwitchToConsequenceText() {
+		DisplayConsequenceText();
 		currentGameState = GameState.Reading;
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
 	}
 
-	void ChangeStateToChoosing() {
+	void SwitchToChoiceView() {
 		currentGameState = GameState.Choosing;
 		ChoiceUI.SetActive(true);
 		ConsequenceUI.SetActive(false);
+
+		UpdateToNewStoryElement();
+		descriptionText.text = currentStoryElement.description;
+
+		timerBar.value = 100;
+	}
+
+	void ChangeToReadingState() {
+		currentGameState = GameState.Reading;
+		ChoiceUI.SetActive(false);
+		ConsequenceUI.SetActive(true);
 	}
 }
