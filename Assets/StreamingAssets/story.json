@@ -1,25 +1,25 @@
 {
     "storyElements": [
         {
-            "description": "Affiches",
+            "description": "Poser des affiches",
             "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
             "danger": 10,
             "networkBonus": 14
         },
         {
-            "description": "Tracts",
+            "description": "Distribuer des tracts",
             "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
             "danger": 4,
             "networkBonus": 8
         },
         {
-            "description": "Réunion",
+            "description": "Se reunir avec des adhérents et leurs amis",
             "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
             "danger": 1,
             "networkBonus": 4
         },
         {
-            "description": "Article de blog",
+            "description": "Publier un article sur internet",
             "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
             "danger": 30,
             "networkBonus": 20
