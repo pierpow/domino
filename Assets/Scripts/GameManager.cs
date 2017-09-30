@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	const int MAX_TIMER_VALUE = 100;
+	const int MAX_TIMER_VALUE = 5;
 
 	public GameObject ChoiceUI;
 	public GameObject ConsequenceUI;
