@@ -6,14 +6,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+	public GameObject ChoiceUI;
+	public GameObject ConsequenceUI;
+
 	public Text descriptionText;
 	public Text networkText;
+	public Text consequenceText;
 
 	public Slider timerBar;
 
 	private Story story;
 
 	public StoryElement currentStoryElement;
+
+	public enum GameState {
+		Choosing,
+		Reading
+	};
+
+	public GameState currentGameState;
 
 	void Awake()
 	{
@@ -27,6 +38,9 @@ public class GameManager : MonoBehaviour {
         } else {
             Debug.LogError("Cannot load game data!");
         }
+
+		ChangeStateToReading();
+
 		timerBar.maxValue = 10;
 		timerBar.minValue = 0;
 		timerBar.value = timerBar.maxValue;
@@ -34,9 +48,21 @@ public class GameManager : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		timerBar.value -= Time.deltaTime;
-		if (timerBar.value <= 0) {
+		if (currentGameState == GameState.Choosing) {
+			timerBar.value -= Time.deltaTime;
+			if (timerBar.value <= 0) {
+				SkipLevel();
+			}
+		}
+	}
+
+	void Update()
+	{
+		if (currentGameState == GameState.Reading)
+		if (Input.GetMouseButtonDown(0)) {
+			// attention on skip pour le premier
 			SkipLevel();
+			ChangeStateToChoosing();
 		}
 	}
 
@@ -54,6 +80,8 @@ public class GameManager : MonoBehaviour {
 		descriptionText.text = currentStoryElement.description;
 
 		timerBar.value = 100;
+
+		ChangeStateToReading();
 	}
 
 	void IncrementNetwork() {
@@ -65,5 +93,18 @@ public class GameManager : MonoBehaviour {
 		int numberOfStoryElements = story.storyElements.Length;
 		int level = Random.Range(0, numberOfStoryElements);
 		currentStoryElement = story.storyElements[level];
+	}
+
+	void ChangeStateToReading() {
+		consequenceText.text = currentStoryElement.consequenceDescription;
+		currentGameState = GameState.Reading;
+		ChoiceUI.SetActive(false);
+		ConsequenceUI.SetActive(true);
+	}
+
+	void ChangeStateToChoosing() {
+		currentGameState = GameState.Choosing;
+		ChoiceUI.SetActive(true);
+		ConsequenceUI.SetActive(false);
 	}
 }
