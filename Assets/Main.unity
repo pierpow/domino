@@ -1276,6 +1276,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114091521036201180, guid: 1485ec02a6a6641499abdcd3cbd3e561,
+        type: 2}
+      propertyPath: m_Text
+      value: "Vous \xEAtes blabla..."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1485ec02a6a6641499abdcd3cbd3e561, type: 2}
   m_IsPrefabParent: 0
@@ -1724,12 +1729,32 @@ Prefab:
     - target: {fileID: 224167323830108728, guid: afe7f9710709d41399f13b0267c2fb68,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -121
+      value: -124
       objectReference: {fileID: 0}
     - target: {fileID: 224063513524046976, guid: afe7f9710709d41399f13b0267c2fb68,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -62
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 224167323830108728, guid: afe7f9710709d41399f13b0267c2fb68,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 25.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224167323830108728, guid: afe7f9710709d41399f13b0267c2fb68,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 34.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 224167323830108728, guid: afe7f9710709d41399f13b0267c2fb68,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 130.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114144105461244408, guid: afe7f9710709d41399f13b0267c2fb68,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afe7f9710709d41399f13b0267c2fb68, type: 2}
