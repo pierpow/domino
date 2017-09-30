@@ -6,9 +6,8 @@
             "consequenceDescription": "Vos parents sont scandalisés mais votre soeur est viens vous voir aprés coup pour échanger avec vous. Elle semble partager vos convictions",
             "picture": "",
             "prerequisites": {
-                "storyId": [],
-                "level": 0,
-                "network": 0
+                "needsUnlock": false,
+                "level": 0
             },
             "dangerAmount": 0,
             "networkBonus": 1
@@ -19,9 +18,8 @@
             "consequenceDescription": "Malgré quelques résistances , vous arrivez à trouver des amis qui vous suivent dans votre combat",
             "picture": "",
             "prerequisites": {
-                "storyId": [],
-                "level": 0,
-                "network": 0
+                "needsUnlock": true,
+                "level": 0
             },
             "dangerAmount": 2,
             "networkBonus": 10
@@ -32,9 +30,8 @@
             "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
             "picture": "posters",
             "prerequisites": {
-                "storyId": [],
-                "level": 0,
-                "network": 0
+                "needsUnlock": true,
+                "level": 0
             },
             "dangerAmount": 10,
             "networkBonus": 14
@@ -44,6 +41,10 @@
             "description": "Distribuer des tracts",
             "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
             "picture": "tracts",
+            "prerequisites": {
+                "needsUnlock": true,
+                "level": 0
+            },
             "dangerAmount": 4,
             "networkBonus": 8
         },
@@ -52,6 +53,10 @@
             "description": "Se reunir avec des adhérents et leurs amis",
             "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
             "picture": "meeting",
+            "prerequisites": {
+                "needsUnlock": true,
+                "level": 0
+            },
             "dangerAmount": 1,
             "networkBonus": 4
         },
@@ -60,6 +65,10 @@
             "description": "Publier un article sur internet",
             "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
             "picture": "blog-article",
+            "prerequisites": {
+                "needsUnlock": true,
+                "level": 0
+            },
             "dangerAmount": 30,
             "networkBonus": 20
         }

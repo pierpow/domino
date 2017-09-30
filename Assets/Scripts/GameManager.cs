@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
 	private int dayNumber = 0;
 	private int networkAmount = 0;
 	private int riskAmount = 0;
+	private int currentLevel = 0;
+	private List<int> achievedStories = new List<int>(); // TODO
 
 	public enum GameState {
 		Choosing,
@@ -150,8 +152,30 @@ public class GameManager : MonoBehaviour {
 		} else {
 			currentPitfall = null;
 			int numberOfStoryElements = story.storyElements.Length;
-			int level = Random.Range(0, numberOfStoryElements);
-			currentStoryElement = story.storyElements[level];
+
+			List<StoryElement> accessibleStoryElements = new List<StoryElement>();
+
+			// This is HORRIBLE! D: D: D:
+			for (int i = 0; i < numberOfStoryElements; i++) {
+				StoryElement current = story.storyElements[i];
+				// If level achieved is high enough
+				if (current.prerequisites.level <= currentLevel) {
+					if (!current.prerequisites.needsUnlock) {
+						// If it does not need any unlock, it's okay!
+						accessibleStoryElements.Add(current);
+					} else {
+						// Otherwise, element has to be present in list
+						if (achievedStories.Contains(current.id)) {
+							Debug.Log("inside the fucking if");
+							accessibleStoryElements.Add(current);
+						}
+					}
+				}
+			}
+
+			int numberOfAccessibleStoryElements = accessibleStoryElements.Count;
+			int level = Random.Range(0, numberOfAccessibleStoryElements);
+			currentStoryElement = accessibleStoryElements[level];
 		}
 	}
 
