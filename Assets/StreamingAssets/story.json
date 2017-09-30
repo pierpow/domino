@@ -7,6 +7,7 @@
             "picture": "",
             "unlocksElementId": 2,
             "prerequisites": {
+                "notAlreadyDone": true,
                 "needsUnlock": false,
                 "level": 0
             },
@@ -20,10 +21,46 @@
             "picture": "",
             "prerequisites": {
                 "needsUnlock": false,
-                "level": 0
+                "level": 1
             },
             "dangerAmount": 2,
             "networkBonus": 10
+        },
+        {
+            "id": 7,
+            "description": "Révolté par les massacres, vous décidez d'écrire un poème. Vous hésitez à le partager ...",
+            "consequenceDescription": "Vous partagez le poème. Suite à cet acte de contestation, vous vous sentez galvanisé !",
+            "picture": "",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 1
+            },
+            "dangerAmount": 20,
+            "networkBonus": 1
+        },
+        {
+            "id": 8,
+            "description": "Vous avez suffisament d'adhérents pour envisager la creation discrète d'une association de lutte contre les massacres commis par l'autorités",
+            "consequenceDescription": "Vous arrivez à réunir un petit groupe de personnes engagées. Vous ne les connaissez pas encore toutes.",
+            "picture": "",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 2
+            },
+            "dangerAmount": 20,
+            "networkBonus": 1
+        },
+        {
+            "id": 5,
+            "description": "Une réunion s'organise, vous envisagez la possibilité d'en prendre partie ",
+            "consequenceDescription": "Vous avez exposé vos idées à des inconnus mais elles ont l'air de passer",
+            "picture": "meeting",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 3
+            },
+            "dangerAmount": 1,
+            "networkBonus": 1
         },
         {
             "id": 3,
@@ -32,7 +69,7 @@
             "picture": "posters",
             "prerequisites": {
                 "needsUnlock": false,
-                "level": 0
+                "level": 3
             },
             "dangerAmount": 10,
             "networkBonus": 14
@@ -44,22 +81,10 @@
             "picture": "tracts",
             "prerequisites": {
                 "needsUnlock": false,
-                "level": 0
+                "level": 3
             },
             "dangerAmount": 4,
             "networkBonus": 8
-        },
-        {
-            "id": 5,
-            "description": "Se reunir avec des adhérents et leurs amis",
-            "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
-            "picture": "meeting",
-            "prerequisites": {
-                "needsUnlock": false,
-                "level": 0
-            },
-            "dangerAmount": 1,
-            "networkBonus": 4
         },
         {
             "id": 6,
