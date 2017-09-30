@@ -11,6 +11,6 @@ public class ButtonScript : MonoBehaviour {
 	}
 
 	public void AcceptEvent () {
-		gameManager.ChangeLevelAfterAccept();
+		gameManager.DoSomething();
 	}
 }

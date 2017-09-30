@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void ChangeLevelAfterAccept() {
+	public void DoSomething() {
 		IncrementNetwork();
 		SwitchToConsequenceText();
 	}
