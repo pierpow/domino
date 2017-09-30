@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DoSomething() {
+		cumulatedInactions = 0;
 		IncrementNetwork();
 		IncrementRisk();
 		DisplayConsequenceText();
@@ -84,6 +85,11 @@ public class GameManager : MonoBehaviour {
 
 	public void DoNothing() {
 		DisplayInactionText();		
+		cumulatedInactions += 1;
+		DecrementRisk();
+		if (cumulatedInactions >= 2) {
+			DecrementNetwork();
+		}
 	}
 
 	void IncrementNetwork() {
@@ -93,6 +99,21 @@ public class GameManager : MonoBehaviour {
 
 	void IncrementRisk() {
 		riskAmount += currentStoryElement.dangerAmount;
+	}
+
+	void DecrementRisk() {
+		riskAmount -= 10;
+		if (riskAmount < 0) {
+			riskAmount = 0;
+		}
+	}
+
+	void DecrementNetwork() {
+		networkAmount -= 10;
+		if (networkAmount < 0) {
+			networkAmount = 0;
+		}
+		networkText.text = networkAmount.ToString();
 	}
 
 	void UpdateToNewStoryElement() {
