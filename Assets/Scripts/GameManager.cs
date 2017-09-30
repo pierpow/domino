@@ -92,15 +92,11 @@ public class GameManager : MonoBehaviour {
 
 	void SwitchToConsequenceText() {
 		DisplayConsequenceText();
-		currentGameState = GameState.Reading;
-		ChoiceUI.SetActive(false);
-		ConsequenceUI.SetActive(true);
+		ChangeToReadingState();
 	}
 
 	void SwitchToChoiceView() {
-		currentGameState = GameState.Choosing;
-		ChoiceUI.SetActive(true);
-		ConsequenceUI.SetActive(false);
+        ChangeToChoiceState();
 
 		UpdateToNewStoryElement();
 		descriptionText.text = currentStoryElement.description;
@@ -112,5 +108,11 @@ public class GameManager : MonoBehaviour {
 		currentGameState = GameState.Reading;
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
+	}
+
+	void ChangeToChoiceState() {
+		currentGameState = GameState.Choosing;
+		ChoiceUI.SetActive(true);
+		ConsequenceUI.SetActive(false);
 	}
 }
