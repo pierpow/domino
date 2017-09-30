@@ -8,4 +8,5 @@ using UnityEngine;
 public class Story
 {
     public StoryElement[] storyElements;
+    public Pitfall[] pitfalls;
 }

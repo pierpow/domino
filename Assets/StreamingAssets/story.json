@@ -28,5 +28,15 @@
             "dangerAmount": 30,
             "networkBonus": 20
         }
+    ],
+    "pitfalls": [
+        {
+            "picture": "police",
+            "description": "La police vous arrête ! D:"
+        },
+        {
+            "picture": "execution",
+            "description": "Vous vous faites exécuter :'("
+        }
     ]
 }

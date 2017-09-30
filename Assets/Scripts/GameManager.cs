@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	private Story story;
 
 	public StoryElement currentStoryElement;
+	public Pitfall currentPitfall;
 
 	private int cumulatedInactions = 0;
 	private int dayNumber = 0;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour {
 
 	public enum GameState {
 		Choosing,
+		Arrested,
 		Reading
 	};
 
@@ -52,8 +54,7 @@ public class GameManager : MonoBehaviour {
 		actionImageComponent = actionImage.GetComponent<Image>();
 		actionImage.SetActive(false);
 
-		timerBar.maxValue = 10;
-		timerBar.minValue = 0;
+		timerBar.maxValue = 5;
 		timerBar.value = timerBar.maxValue;
 	}
 
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (currentGameState == GameState.Reading) {
+		if (currentGameState == GameState.Reading || currentGameState == GameState.Arrested) {
 			if (Input.GetMouseButtonDown(0)) {
 				SwitchToChoiceView();
 			}
@@ -102,6 +103,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void DecrementRisk() {
+		// TODO
 		riskAmount -= 10;
 		if (riskAmount < 0) {
 			riskAmount = 0;
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void DecrementNetwork() {
+		// TODO
 		networkAmount -= 10;
 		if (networkAmount < 0) {
 			networkAmount = 0;
@@ -120,9 +123,19 @@ public class GameManager : MonoBehaviour {
 		dayNumber += 1;
 		daysText.text = dayNumber.ToString();
 
-		int numberOfStoryElements = story.storyElements.Length;
-		int level = Random.Range(0, numberOfStoryElements);
-		currentStoryElement = story.storyElements[level];
+        // TODO
+        int caughtScore = Random.Range(10, 100);
+		if (riskAmount > caughtScore) {
+			currentStoryElement = null;
+			int numberOfPitfalls = story.pitfalls.Length;
+			int pitfallIndex = Random.Range(0, numberOfPitfalls);
+			currentPitfall = story.pitfalls[pitfallIndex];
+		} else {
+			currentPitfall = null;
+			int numberOfStoryElements = story.storyElements.Length;
+			int level = Random.Range(0, numberOfStoryElements);
+			currentStoryElement = story.storyElements[level];
+		}
 	}
 
 	void DisplayConsequenceText() {
@@ -135,15 +148,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void SwitchToChoiceView() {
-        ChangeToChoiceState();
 
 		UpdateToNewStoryElement();
+		
+		if (currentPitfall != null) {
+			consequenceText.text = currentPitfall.description;
+		} else {
+            ChangeToChoiceState();
+			actionImage.SetActive(true);
+			Sprite newSprite = Resources.Load(currentStoryElement.picture, typeof(Sprite)) as Sprite;
+			actionImageComponent.sprite = newSprite;
 
-		actionImage.SetActive(true);
-		Sprite newSprite = Resources.Load(currentStoryElement.picture, typeof(Sprite)) as Sprite;
-		actionImageComponent.sprite = newSprite;
-
-		descriptionText.text = currentStoryElement.description;
+			descriptionText.text = currentStoryElement.description;
+		}
 
 		timerBar.value = 100;
 	}
@@ -158,5 +175,11 @@ public class GameManager : MonoBehaviour {
 		currentGameState = GameState.Choosing;
 		ChoiceUI.SetActive(true);
 		ConsequenceUI.SetActive(false);
+	}
+
+	void ChangeToArrestedState() {
+		currentGameState = GameState.Arrested;
+		ChoiceUI.SetActive(false);
+		ConsequenceUI.SetActive(true);
 	}
 }
