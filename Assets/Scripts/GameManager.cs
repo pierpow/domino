@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
 	private int networkAmount = 0;
 	private int riskAmount = 0;
 
+	public SoundManager soundManager;
+
 	public enum GameState {
 		Choosing,
 		Arrested,
@@ -152,7 +154,9 @@ public class GameManager : MonoBehaviour {
 		UpdateToNewStoryElement();
 		
 		if (currentPitfall != null) {
+			ChangeToArrestedState();
 			consequenceText.text = currentPitfall.description;
+			soundManager.gameOverSoundSource.Play();
 		} else {
             ChangeToChoiceState();
 			actionImage.SetActive(true);

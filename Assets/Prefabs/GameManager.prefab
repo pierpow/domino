@@ -51,9 +51,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b066bf72f58c742e8a133fc85e88c2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChoiceUI: {fileID: 0}
+  ConsequenceUI: {fileID: 0}
   descriptionText: {fileID: 0}
   networkText: {fileID: 0}
+  consequenceText: {fileID: 0}
+  daysText: {fileID: 0}
+  actionImage: {fileID: 0}
+  timerBar: {fileID: 0}
   currentStoryElement:
-    id: 0
     description: 
     networkBonus: 0
+    dangerAmount: 0
+    consequenceDescription: 
+    picture: 
+  currentPitfall:
+    description: 
+  gameOverSound: {fileID: 0}
+  soundManager: {fileID: 0}
+  currentGameState: 0
