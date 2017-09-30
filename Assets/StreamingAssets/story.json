@@ -1,16 +1,20 @@
 {
     "storyElements": [
         {
-            "description": "Affiches"
+            "description": "Affiches",
+            "networkBonus": 7
         },
         {
-            "description": "Tracts"
+            "description": "Tracts",
+            "networkBonus": 2
         },
         {
-            "description": "Réunion"
+            "description": "Réunion",
+            "networkBonus": 2
         },
         {
-            "description": "Article de blog"
+            "description": "Article de blog",
+            "networkBonus": 20
         }
     ]
 }

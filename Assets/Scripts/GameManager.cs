@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public Text descriptionText;
+	public Text networkText;
 
 	private Story story;
+
+	public StoryElement currentStoryElement;
 
 	void Awake()
 	{
@@ -25,8 +28,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void changeLevel() {
+		int currentNetwork = System.Convert.ToInt32(networkText.text);
+		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
+
 		int numberOfStoryElements = story.storyElements.Length;
 		int level = Random.Range(0, numberOfStoryElements);
-		descriptionText.text = story.storyElements[level].description;
+		currentStoryElement = story.storyElements[level];
+		descriptionText.text = currentStoryElement.description;
 	}
 }

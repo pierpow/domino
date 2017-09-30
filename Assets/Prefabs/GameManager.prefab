@@ -52,3 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 0}
+  networkText: {fileID: 0}
+  currentStoryElement:
+    id: 0
+    description: 
+    networkBonus: 0
