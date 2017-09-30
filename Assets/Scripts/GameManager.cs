@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public Text descriptionText;
 	public Text networkText;
 	public Text consequenceText;
+	public Text riskText;
 	public GameObject actionImage;
 	private Image actionImageComponent;
 
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour {
 
 	public void DoSomething() {
 		IncrementNetwork();
+		IncrementRisk();
 		DisplayConsequenceText();
 	}
 
@@ -84,6 +86,11 @@ public class GameManager : MonoBehaviour {
 	void IncrementNetwork() {
 		int currentNetwork = System.Convert.ToInt32(networkText.text);
 		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
+	}
+
+	void IncrementRisk() {
+		int currentRisk = System.Convert.ToInt32(riskText.text);
+		networkText.text = (currentRisk + currentStoryElement.dangerAmount).ToString();
 	}
 
 	void UpdateToNewStoryElement() {

@@ -4,28 +4,28 @@
             "description": "Poser des affiches",
             "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
             "picture": "posters",
-            "danger": 10,
+            "dangerAmount": 10,
             "networkBonus": 14
         },
         {
             "description": "Distribuer des tracts",
             "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
             "picture": "tracts",
-            "danger": 4,
+            "dangerAmount": 4,
             "networkBonus": 8
         },
         {
             "description": "Se reunir avec des adhérents et leurs amis",
             "consequenceDescription": "Vous organisez une réunion. Vous gagnez {0} en réseau.",
             "picture": "meeting",
-            "danger": 1,
+            "dangerAmount": 1,
             "networkBonus": 4
         },
         {
             "description": "Publier un article sur internet",
             "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
             "picture": "blog-article",
-            "danger": 30,
+            "dangerAmount": 30,
             "networkBonus": 20
         }
     ]
