@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour {
 	public Text descriptionText;
 	public Text networkText;
 	public Text consequenceText;
-	public Text riskText;
 	public Text daysText;
 	public GameObject actionImage;
 	private Image actionImageComponent;
@@ -94,7 +93,6 @@ public class GameManager : MonoBehaviour {
 
 	void IncrementRisk() {
 		riskAmount += currentStoryElement.dangerAmount;
-		riskText.text = riskAmount.ToString();
 	}
 
 	void UpdateToNewStoryElement() {
