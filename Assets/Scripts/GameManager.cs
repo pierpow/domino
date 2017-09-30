@@ -36,13 +36,12 @@ public class GameManager : MonoBehaviour {
 	{
 		timerBar.value -= Time.deltaTime;
 		if (timerBar.value <= 0) {
-			changeLevel();
+			ChangeLevel();
 		}
 	}
 
-	public void changeLevel() {
-		int currentNetwork = System.Convert.ToInt32(networkText.text);
-		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
+	public void ChangeLevel() {
+		IncrementNetwork();
 
 		int numberOfStoryElements = story.storyElements.Length;
 		int level = Random.Range(0, numberOfStoryElements);
@@ -50,5 +49,10 @@ public class GameManager : MonoBehaviour {
 		descriptionText.text = currentStoryElement.description;
 
 		timerBar.value = 100;
+	}
+
+	void IncrementNetwork() {
+		int currentNetwork = System.Convert.ToInt32(networkText.text);
+		networkText.text = (currentNetwork + currentStoryElement.networkBonus).ToString();
 	}
 }
