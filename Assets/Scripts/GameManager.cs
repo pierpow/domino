@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	public Text descriptionText;
 	public Text networkText;
 
+	public Slider timerBar;
+
 	private Story story;
 
 	public StoryElement currentStoryElement;
@@ -25,6 +27,17 @@ public class GameManager : MonoBehaviour {
         } else {
             Debug.LogError("Cannot load game data!");
         }
+		timerBar.maxValue = 10;
+		timerBar.minValue = 0;
+		timerBar.value = timerBar.maxValue;
+	}
+
+	void FixedUpdate()
+	{
+		timerBar.value -= Time.deltaTime;
+		if (timerBar.value <= 0) {
+			changeLevel();
+		}
 	}
 
 	public void changeLevel() {
@@ -35,5 +48,7 @@ public class GameManager : MonoBehaviour {
 		int level = Random.Range(0, numberOfStoryElements);
 		currentStoryElement = story.storyElements[level];
 		descriptionText.text = currentStoryElement.description;
+
+		timerBar.value = 100;
 	}
 }
