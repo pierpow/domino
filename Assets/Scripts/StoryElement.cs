@@ -10,6 +10,7 @@ public class StoryElement
     public string consequenceDescription;
     public string inactionConsequenceDescription;
     public string picture;
+    public string gameOverMessage;
     public StoryPrerequisite prerequisites;
     public int unlocksElementId;
 }

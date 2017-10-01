@@ -222,7 +222,6 @@ public class GameManager : MonoBehaviour {
 		dayNumber += 1;
 		daysTextInOverlay.text = string.Format(DAYS_TEXT, dayNumber.ToString());
 		
-		currentStoryElement = null;
 		currentPitfall = null;
 
 		// Choose accessible pitfall
@@ -309,6 +308,10 @@ public class GameManager : MonoBehaviour {
 			actionImageComponent.sprite = newSprite;
 
 			consequenceText.text = currentPitfall.description;
+			if (currentPitfall.isFatal && currentStoryElement.gameOverMessage != null) {
+                // If is fatal, display a custom text according to story element
+                consequenceText.text = currentStoryElement.gameOverMessage;
+			}
 			audioSourceComponent.PlayOneShot ((AudioClip)Resources.Load (currentPitfall.sound));
 		} else {
             ChangeToChoiceState();
