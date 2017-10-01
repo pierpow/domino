@@ -5,8 +5,7 @@
       "description": "Vous hésitez à parler des événements récents à votre famille",
       "consequenceDescription": "Vous décidez finalement d'en parler : vos parents sont scandalisés. Cependant, votre sœur vient vous voir après la discussion pour échanger avec vous. Elle semble partager vos convictions",
       "inactionConsequenceDescription": "Le coeur lourd, vous restez silencieux. Cependant, votre soeur vient vous voir après le repas et semble partager vos convictions",
-      "picture": "",
-      "gameOverMessage": "C'EST LA MORT!",
+      "picture": "Enparler",
       "unlocksElementId": 2,
       "prerequisites": {
         "doableOnce": true,
@@ -22,7 +21,7 @@
       "consequenceDescription": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
       "inactionConsequenceDescription": "Vous préferez ne pas prendre le risque de dévoiler vos convictions à vos amis",
       "gameOverMessage": "Malheureusement un sympathisant de l'autorité faisait partie de vos contacts.",
-      "picture": "",
+      "picture": "SMS",
       "prerequisites": {
         "needsUnlock": false,
         "level": 1
@@ -36,7 +35,7 @@
       "consequenceDescription": "Vous laissez le poème sur un banc. Suite à cet acte de contestation, vous vous sentez galvanisé !",
       "inactionConsequenceDescription": "Effrayé par le risque d'être vu par les autorités, vous décidez de garder le poème pour vous.",
       "gameOverMessage": "Un membre de l'autorité vous a vu déposer le poème.",
-      "picture": "",
+      "picture": "Poème",
       "prerequisites": {
         "needsUnlock": false,
         "level": 1
@@ -49,8 +48,7 @@
       "description": "Suffisament de personnes suivent vos idées pour envisager la création discrète d'une association de lutte contre les massacres commis par l'autorité.",
       "consequenceDescription": "Vous arrivez à réunir un petit groupe de personnes engagées. Bien qu'une partie vous est encore inconnue, vous sentez que vos actions seront plus efficaces.",
       "inactionConsequenceDescription": "Vous sentez que vous n'avez pas encore confiance en tout le monde, et reportez la création d'une association à un autre moment.",
-      "gameOverMessage": "C'EST LA MORT!",
-      "picture": "",
+      "picture": "Assos",
       "prerequisites": {
         "needsUnlock": false,
         "level": 2
@@ -64,7 +62,7 @@
       "consequenceDescription": "Vous avez exposé vos idées à des membres inconnus mais tout le monde a l'air de les suivre.",
       "inactionConsequenceDescrition": "Vous restez finalement en sécurité chez vous, ça sera pour une autre fois",
       "gameOverMessage": "L'autorité avait discrètement infiltré votre organisation. On vous emprisonne pour complot contre le gouvernement.",
-      "picture": "meeting",
+      "picture": "Réunion",
       "prerequisites": {
         "needsUnlock": false,
         "level": 3
@@ -81,6 +79,7 @@
       "picture": "posters",
       "unlocksElementId": 4,
       "prerequisites": {
+        "doableOnce": true,
         "needsUnlock": false,
         "level": 3
       },
@@ -167,6 +166,7 @@
       "picture": "blog-article",
       "unlocksElementId": 15,
       "prerequisites": {
+        "doableOnce": true,
         "needsUnlock": false,
         "level": 4
       },
