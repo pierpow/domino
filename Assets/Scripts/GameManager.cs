@@ -76,8 +76,6 @@ public class GameManager : MonoBehaviour {
 		string dataAsJson = File.ReadAllText(filePath); 
 		story = JsonUtility.FromJson<Story>(dataAsJson);
 
-		ChangeToIntroductionState();
-
 		actionImageComponent = actionImage.GetComponent<Image>();
 		actionImage.SetActive(false);
 
@@ -87,7 +85,9 @@ public class GameManager : MonoBehaviour {
 		timerBar.value = timerBar.maxValue;
 
 		playerScript = player.GetComponent<PlayerScript>();
-		playerScript.NewPlayer();
+		playerScript.InitialPlayer();
+
+		ChangeToIntroductionState();
 	}
 
 	void FixedUpdate()
@@ -128,6 +128,9 @@ public class GameManager : MonoBehaviour {
 			case GameState.Arrested:
 				if (isMouseClicked) {
 					playerScript.NewPlayer();
+					ResetRisk();
+					DegradeNetworkAfterDeath();
+                    musicScript.PlayMusicForLevel(riskAmount);
 					ChangeToReadingCharacterIntroduction();
 				}
 				break;
@@ -186,6 +189,16 @@ public class GameManager : MonoBehaviour {
 		if (networkAmount < 0) {
 			networkAmount = 0;
 		}
+		networkText.text = networkAmount.ToString();
+	}
+
+	void ResetRisk() {
+		riskAmount = 0;
+		riskText.text = riskAmount.ToString();
+	}
+
+	void DegradeNetworkAfterDeath() {
+		networkAmount = (int) (0.7f * networkAmount);
 		networkText.text = networkAmount.ToString();
 	}
 
