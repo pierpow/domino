@@ -4,6 +4,7 @@
             "id": 1,
             "description": "Vous hesitez à parler des événements récents à votre famille. ",
             "consequenceDescription": "Vos parents sont scandalisés mais votre soeur est viens vous voir aprés coup pour échanger avec vous. Elle semble partager vos convictions",
+            "inactionConsequenceDescription": "Vous ne dites rien ... Pourtant, vous êtes indigné. Vous savez que vous devez en parler.",
             "picture": "",
             "unlocksElementId": 2,
             "prerequisites": {

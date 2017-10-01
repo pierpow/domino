@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour {
 		IncrementRisk();
 		DisplayConsequenceText();
 
+        currentLevel++;
+
 		unlockedStories.Add(currentStoryElement.unlocksElementId);
 		alreadyDoneStories.Add(currentStoryElement.id);
 
@@ -181,7 +183,6 @@ public class GameManager : MonoBehaviour {
 			int level = Random.Range(0, numberOfAccessibleStoryElements);
 			currentStoryElement = accessibleStoryElements[level];
 
-			currentLevel++;
 		}
 	}
 
@@ -190,7 +191,13 @@ public class GameManager : MonoBehaviour {
 		ChangeToReadingState();
 	}
 	void DisplayInactionText() {
-		consequenceText.text = "Vous ne faites rien.";
+		// Default value
+		string inactionText = "Vous ne faites rien.";
+
+		if (currentStoryElement.inactionConsequenceDescription != null) {
+			inactionText = currentStoryElement.inactionConsequenceDescription;
+		}
+		consequenceText.text = inactionText;
 		ChangeToReadingState();
 	}
 

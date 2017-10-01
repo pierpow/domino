@@ -8,6 +8,7 @@ public class StoryElement
     public int networkBonus;
     public int dangerAmount;
     public string consequenceDescription;
+    public string inactionConsequenceDescription;
     public string picture;
     public StoryPrerequisite prerequisites;
     public int unlocksElementId;
