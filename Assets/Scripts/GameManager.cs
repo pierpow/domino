@@ -16,9 +16,12 @@ public class GameManager : MonoBehaviour {
 	public Text riskText;
 	public Text consequenceText;
 	public Text daysText;
+	public Text daysTextInOverlay;
 	public Slider timerBar;
 	public GameObject actionImage;
 	private Image actionImageComponent;
+
+	public GameObject overlay;
 
 	private Story story;
 	public StoryElement currentStoryElement;
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour {
 	private AudioSource audioSourceComponent;
 
 	private int cumulatedInactions = 0;
-	private int dayNumber = 0;
+	private int dayNumber = 1;
 	private int networkAmount = 0;
 	private int riskAmount = 0;
 	private int currentLevel = 0;
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour {
 	private List<int> alreadyDoneStories = new List<int>();
 
 	public enum GameState {
+		ReadingDays,
 		Choosing,
 		Arrested,
 		Reading
@@ -61,7 +65,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Cannot load game data!");
         }
 
-		ChangeToReadingState();
+		ChangeToReadingDaysState();
 
 		actionImageComponent = actionImage.GetComponent<Image>();
 		actionImage.SetActive(false);
@@ -84,10 +88,21 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (currentGameState == GameState.Reading) {
-			if (Input.GetMouseButtonDown(0)) {
-				SwitchToChoiceView();
-			}
+		bool isMouseClicked = Input.GetMouseButtonDown(0);
+
+		switch (currentGameState) {
+			case GameState.ReadingDays:
+				if (isMouseClicked) {
+					SwitchToChoiceView();
+				}
+				break;
+			case GameState.Reading:
+				if (isMouseClicked) {
+					ChangeToReadingDaysState();
+				}
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -145,8 +160,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UpdateToNewStoryElement() {
-		dayNumber += 1;
+		// TODO Day view is shifted by 1
+		// This is stupid but no time to fix it
 		daysText.text = dayNumber.ToString();
+		dayNumber += 1;
+		daysTextInOverlay.text = "Jour " + dayNumber.ToString();
 
         // TODO
         int caughtScore = Random.Range(40, 100);
@@ -225,17 +243,55 @@ public class GameManager : MonoBehaviour {
 		currentGameState = GameState.Reading;
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
+		overlay.SetActive(false);
 	}
 
 	void ChangeToChoiceState() {
 		currentGameState = GameState.Choosing;
 		ChoiceUI.SetActive(true);
 		ConsequenceUI.SetActive(false);
+		overlay.SetActive(false);
 	}
 
 	void ChangeToArrestedState() {
 		currentGameState = GameState.Arrested;
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
+		overlay.SetActive(false);
+	}
+
+	void ChangeToReadingDaysState() {
+		currentGameState = GameState.ReadingDays;
+		overlay.SetActive(true);
 	}
 }
+
+// private float elapsedTimeForAnimation = 0;
+
+// IEnumerator FadeInOverlay() {
+// 	int fadeTime = 2;
+// 	CanvasGroup overlayCanvasGroup = overlay.GetComponent<CanvasGroup>();
+// 	while(overlayCanvasGroup.alpha < 100)
+// 	{
+// 		elapsedTimeForAnimation += Time.deltaTime;
+// 		overlayCanvasGroup.alpha = Mathf.Clamp01(elapsedTimeForAnimation / fadeTime);
+// 		yield return null;
+// 	}
+
+// 	elapsedTimeForAnimation = 0;
+// 	yield return null;
+// }
+
+// IEnumerator FadeOutOverlay() {
+// 	int fadeTime = 2;
+// 	CanvasGroup overlayCanvasGroup = overlay.GetComponent<CanvasGroup>();
+// 	while(overlayCanvasGroup.alpha > 0)
+// 	{
+// 		elapsedTimeForAnimation += Time.deltaTime;
+// 		overlayCanvasGroup.alpha = Mathf.Clamp01(1.0f - (elapsedTimeForAnimation / fadeTime));
+// 		yield return null;
+// 	}
+
+// 	elapsedTimeForAnimation = 0;
+// 	yield return null;
+// }
