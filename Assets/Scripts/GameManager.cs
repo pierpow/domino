@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	const int MAX_TIMER_VALUE = 5;
+	const string DEFAULT_INACTION_TEXT = "Vous ne faites rien.";
+	const string DAYS_TEXT = "Jour {0}";
 
 	public GameObject ChoiceUI;
 	public GameObject ConsequenceUI;
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameState currentGameState;
 
+	private PlayerScript playerScript;
+
 	void Awake()
 	{
 		overlay.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
@@ -82,8 +86,8 @@ public class GameManager : MonoBehaviour {
 		timerBar.maxValue = MAX_TIMER_VALUE;
 		timerBar.value = timerBar.maxValue;
 
-		PlayerScript playerScript = player.GetComponent<PlayerScript>();
-		playerScript.ChangeColor();
+		playerScript = player.GetComponent<PlayerScript>();
+		playerScript.NewPlayer();
 	}
 
 	void FixedUpdate()
@@ -119,6 +123,12 @@ public class GameManager : MonoBehaviour {
 			case GameState.Reading:
 				if (isMouseClicked) {
 					ChangeToReadingDaysState();
+				}
+				break;
+			case GameState.Arrested:
+				if (isMouseClicked) {
+					playerScript.NewPlayer();
+					ChangeToReadingCharacterIntroduction();
 				}
 				break;
 			default:
@@ -184,7 +194,8 @@ public class GameManager : MonoBehaviour {
 		// This is stupid but no time to fix it
 		daysText.text = dayNumber.ToString();
 		dayNumber += 1;
-		daysTextInOverlay.text = "Jour " + dayNumber.ToString();
+		daysTextInOverlay.text = string.Format(DAYS_TEXT, dayNumber.ToString());
+		
 
         // TODO
         int caughtScore = Random.Range(40, 100);
@@ -230,7 +241,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void DisplayInactionText() {
 		// Default value
-		string inactionText = "Vous ne faites rien.";
+		string inactionText = DEFAULT_INACTION_TEXT;
 
 		if (currentStoryElement.inactionConsequenceDescription != null) {
 			inactionText = currentStoryElement.inactionConsequenceDescription;
