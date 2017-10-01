@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	private Image actionImageComponent;
 
 	public GameObject overlay;
+	public GameObject actionInterface;
 	public GameObject introductionInterface;
 
 	private Story story;
@@ -55,7 +56,12 @@ public class GameManager : MonoBehaviour {
 
 	void Awake()
 	{
+		overlay.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+		introductionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+		actionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+
 		musicScript = musicManager.GetComponent<MusicScript>();
+		musicScript.Init();
 		musicScript.PlayMusicForLevel(riskAmount);
 
 		story = new Story();

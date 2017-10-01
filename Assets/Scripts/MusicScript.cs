@@ -21,7 +21,12 @@ public class MusicScript : MonoBehaviour {
 
 	private int currentlyPlaying = 0;
 
-	void Awake () {
+	public void Init() {
+		Awake();
+	}
+
+	void Awake() {
+		// Awake does not work anymore, dunno why
 		musicLevel1Source = musicLevel1.GetComponent<AudioSource>();
 		musicLevel2Source = musicLevel2.GetComponent<AudioSource>();
 		musicLevel3Source = musicLevel3.GetComponent<AudioSource>();
