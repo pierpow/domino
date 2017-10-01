@@ -18,6 +18,10 @@ public class PlayerScript : MonoBehaviour {
 		characterIntroductionText.text = string.Format(INITIAL_PLAYER_INTRODUCTION, age);
 	}
 
+	public void TogglePlayer(bool toggle) {
+		gameObject.SetActive(toggle);
+	}
+
 	public void NewPlayer() {
 		GenerateColor();
 		GenerateAge();

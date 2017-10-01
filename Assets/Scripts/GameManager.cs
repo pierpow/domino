@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour {
 		overlay.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
 		characterIntroductionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
 		actionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+		introductionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
 
 		musicScript = musicManager.GetComponent<MusicScript>();
 		musicScript.Init();
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
 
 		playerScript = player.GetComponent<PlayerScript>();
 		playerScript.InitialPlayer();
+		playerScript.TogglePlayer(false);
 
 		ChangeToIntroductionState();
 	}
@@ -111,6 +113,7 @@ public class GameManager : MonoBehaviour {
 		switch (currentGameState) {
 			case GameState.ReadingIntroduction:
 				if (isMouseClicked) {
+					playerScript.TogglePlayer(true);
 					ChangeToReadingCharacterIntroduction();
 				}
 				break;
