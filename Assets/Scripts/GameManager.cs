@@ -265,33 +265,3 @@ public class GameManager : MonoBehaviour {
 		overlay.SetActive(true);
 	}
 }
-
-// private float elapsedTimeForAnimation = 0;
-
-// IEnumerator FadeInOverlay() {
-// 	int fadeTime = 2;
-// 	CanvasGroup overlayCanvasGroup = overlay.GetComponent<CanvasGroup>();
-// 	while(overlayCanvasGroup.alpha < 100)
-// 	{
-// 		elapsedTimeForAnimation += Time.deltaTime;
-// 		overlayCanvasGroup.alpha = Mathf.Clamp01(elapsedTimeForAnimation / fadeTime);
-// 		yield return null;
-// 	}
-
-// 	elapsedTimeForAnimation = 0;
-// 	yield return null;
-// }
-
-// IEnumerator FadeOutOverlay() {
-// 	int fadeTime = 2;
-// 	CanvasGroup overlayCanvasGroup = overlay.GetComponent<CanvasGroup>();
-// 	while(overlayCanvasGroup.alpha > 0)
-// 	{
-// 		elapsedTimeForAnimation += Time.deltaTime;
-// 		overlayCanvasGroup.alpha = Mathf.Clamp01(1.0f - (elapsedTimeForAnimation / fadeTime));
-// 		yield return null;
-// 	}
-
-// 	elapsedTimeForAnimation = 0;
-// 	yield return null;
-// }
