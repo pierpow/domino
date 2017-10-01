@@ -149,7 +149,7 @@
       "consequenceDescription": "Ce moyen de communication vous semble être une bonne idée, et vous vous attelez à la rédaction d'un article.",
       "inactionConsequenceDescription": "La publication d'un journal vous paraît extrêmement risqué pour le moment, vous reportez sa sortie à plus tard.",
       "gameOverMessage": "L'article a dépassé les limites, l'autorité vous exécute comme exemple.",
-      "picture": "Scripts",
+      "picture": "Script",
       "prerequisites": {
         "needsUnlock": false,
         "level": 4
@@ -208,7 +208,7 @@
       "consequenceDescription": "Votre blog fait beaucoup de bruit dans le monde, des journaux étrangers décident de reprendre vos témoignages",
       "inactionConsequenceDescription": "Des articles oui, mais vous avez trop peur que l'autorité remonte à vous. Vous laissez passer votre tour pour cette fois.",
       "gameOverMessage": "L'autorité n'a pas eu de mal à trouver l'auteur de ces articles, et vous assassine froidement dès le lendemain.",
-      "picture": "Script",
+      "picture": "blog",
       "unlocksElementId": 13,
       "prerequisites": {
         "needsUnlock": true,
@@ -279,7 +279,7 @@
     },
     {
       "id": 3,
-      "picture": "studiesfunding",
+      "picture": "pression-pro",
       "sound": "",
       "threshold": 55,
       "isFatal": false,
@@ -287,7 +287,7 @@
     },
     {
       "id": 4,
-      "picture": "phonecalls",
+      "picture": "pression-sociale",
       "sound": "",
       "threshold": 70,
       "isFatal": false,
@@ -304,7 +304,7 @@
     {
       "id": 6,
       "picture": "police",
-      "sound": "game-over",
+      "sound": "prison",
       "threshold": 100,
       "isFatal": true,
       "description": "La police vous arrête."

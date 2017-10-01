@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	const int MAX_TIMER_VALUE = 5;
-	const int NETWORK_AMOUNT_TO_WIN = 500;
+	const int NETWORK_AMOUNT_TO_WIN = 800;
 	const string DEFAULT_INACTION_TEXT = "Vous ne faites rien.";
 	const string DAYS_TEXT = "Jour {0}";
 
