@@ -270,20 +270,44 @@
       "description": "Vos actions on attiré l'attention des autorités, vous êtes désormais sous surveillance ..."
     },
     {
+      "id": 2,
+      "picture": "censure",
+      "sound": "",
+      "threshold": 40,
+      "isFatal": false,
+      "description": "L'autorité vous a bien repéré, elle a décidé de censurer vos propos."
+    },
+    {
+      "id": 3,
+      "picture": "studiesfunding",
+      "sound": "",
+      "threshold": 55,
+      "isFatal": false,
+      "description": "Le financement de vos études est maintenant gravement menacé par l'autorité."
+    },
+    {
+      "id": 4,
+      "picture": "phonecalls",
+      "sound": "",
+      "threshold": 70,
+      "isFatal": false,
+      "description": "Votre famille reçoit des coups de téléphone menaçant de l'autorité."
+    },
+    {
+      "id": 5,
+      "picture": "apatride",
+      "sound": "",
+      "threshold": 90,
+      "isFatal": false,
+      "description": "L'autorité a fait irruption chez vous quand vous étiez absent et vous a dérobé vos papiers pour vous empêcher de fuir. Vous voila apatride.."
+    },
+    {
       "id": 6,
       "picture": "police",
       "sound": "game-over",
       "threshold": 100,
       "isFatal": true,
-      "description": "La police vous arrête ! D:"
-    },
-    {
-      "id": 7,
-      "picture": "execution",
-      "sound": "game-over",
-      "threshold": 100,
-      "isFatal": true,
-      "description": "Vous vous faites exécuter :'("
+      "description": "La police vous arrête."
     }
   ]
 }
