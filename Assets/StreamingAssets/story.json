@@ -18,7 +18,8 @@
         {
             "id": 2,
             "description": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
-            "consequenceDescription": "Malgré quelques résistances , vous arrivez à trouver des amis qui vous suivent dans votre combat",
+            "consequenceDescription": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
+            "inactionConsequenceDescription": "Vous préferez ne pas prendre le risque de dévoiler vos convictions à vos amis",
             "picture": "",
             "prerequisites": {
                 "needsUnlock": false,
