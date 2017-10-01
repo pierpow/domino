@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
 		timerBar.value = timerBar.maxValue;
 
 		PlayerScript playerScript = player.GetComponent<PlayerScript>();
-		playerScript.ChangeColor(new Color(0, 1, 0, 1));
+		playerScript.ChangeColor();
 	}
 
 	void FixedUpdate()
