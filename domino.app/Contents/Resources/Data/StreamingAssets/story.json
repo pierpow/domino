@@ -1,0 +1,129 @@
+{
+    "storyElements": [
+        {
+            "id": 1,
+            "description": "Vous hésitez à parler des événements récents à votre famille. ",
+            "consequenceDescription": "Vos parents sont scandalisés mais votre soeur vient vous voir pour échanger avec vous. Elle semble partager vos convictions",
+            "inactionConsequenceDescription": "Vous ne dites rien ... Pourtant, vous êtes indigné. Vous savez que vous devez en parler.",
+            "picture": "",
+            "unlocksElementId": 2,
+            "prerequisites": {
+                "doableOnce": true,
+                "needsUnlock": false,
+                "level": 0
+            },
+            "dangerAmount": 0,
+            "networkBonus": 1
+        },
+        {
+            "id": 2,
+            "description": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
+            "consequenceDescription": "Malgré quelques résistances , vous arrivez à trouver des amis qui vous suivent dans votre combat",
+            "picture": "",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 1
+            },
+            "dangerAmount": 2,
+            "networkBonus": 10
+        },
+        {
+            "id": 7,
+            "description": "Révolté par les massacres, vous décidez d'écrire un poème. Vous hésitez à le partager ...",
+            "consequenceDescription": "Vous partagez le poème. Suite à cet acte de contestation, vous vous sentez galvanisé !",
+            "picture": "",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 1
+            },
+            "dangerAmount": 20,
+            "networkBonus": 1
+        },
+        {
+            "id": 8,
+            "description": "Vous avez suffisament d'adhérents pour envisager la creation discrète d'une association de lutte contre les massacres commis par l'autorités",
+            "consequenceDescription": "Vous arrivez à réunir un petit groupe de personnes engagées. Vous ne les connaissez pas encore toutes.",
+            "picture": "",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 2
+            },
+            "dangerAmount": 20,
+            "networkBonus": 1
+        },
+        {
+            "id": 5,
+            "description": "Une réunion s'organise, vous envisagez la possibilité d'en prendre partie ",
+            "consequenceDescription": "Vous avez exposé vos idées à des inconnus mais elles ont l'air de passer",
+            "picture": "meeting",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 3
+            },
+            "dangerAmount": 1,
+            "networkBonus": 1
+        },
+        {
+            "id": 3,
+            "description": "Poser des affiches",
+            "consequenceDescription": "Vous posez des affiches. Vous gagnez {0} en réseau.",
+            "picture": "posters",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 3
+            },
+            "dangerAmount": 10,
+            "networkBonus": 14
+        },
+        {
+            "id": 4,
+            "description": "Distribuer des tracts",
+            "consequenceDescription": "Vous distribuez des tracts. Vous gagnez {0} en réseau.",
+            "picture": "tracts",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 3
+            },
+            "dangerAmount": 4,
+            "networkBonus": 8
+        },
+        {
+            "id": 6,
+            "description": "Publier un article sur internet",
+            "consequenceDescription": "Vous écrivez un article de blog. Vous gagnez {0} en réseau.",
+            "picture": "blog-article",
+            "prerequisites": {
+                "needsUnlock": false,
+                "level": 3
+            },
+            "dangerAmount": 30,
+            "networkBonus": 20
+        }
+    ],
+    "pitfalls": [
+        {
+            "id": 1,
+            "picture": "surveillance",
+            "sound": "",
+            "threshold": 20,
+            "isFatal": false,
+            "description": "Vos actions on attiré l'attention des autorités, vous êtes désormais sous surveillance ..."
+        },
+        {
+            "id": 6,
+            "picture": "police",
+            "sound": "game-over",
+            "threshold": 100,
+            "isFatal": true,
+            "description": "La police vous arrête ! D:"
+        },
+        {
+            "id": 7,
+            "picture": "execution",
+            "sound": "game-over",
+            "threshold": 100,
+            "isFatal": true,
+            "description": "Vous vous faites exécuter :'("
+        }
+    ]
+}

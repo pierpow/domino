@@ -303,6 +303,11 @@ public class GameManager : MonoBehaviour {
 		
 		if (currentPitfall != null) {
 			ChangeToArrestedState();
+
+			actionImage.SetActive(true);
+			Sprite newSprite = Resources.Load(currentPitfall.picture, typeof(Sprite)) as Sprite;
+			actionImageComponent.sprite = newSprite;
+
 			consequenceText.text = currentPitfall.description;
 			audioSourceComponent.PlayOneShot ((AudioClip)Resources.Load (currentPitfall.sound));
 		} else {
