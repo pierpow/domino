@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	const int MAX_TIMER_VALUE = 5;
+	const int NETWORK_AMOUNT_TO_WIN = 50;
 	const string DEFAULT_INACTION_TEXT = "Vous ne faites rien.";
 	const string DAYS_TEXT = "Jour {0}";
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject actionInterface;
 	public GameObject characterIntroductionInterface;
 	public GameObject introductionInterface;
+	public GameObject winningInterface;
 
 	private Story story;
 	public StoryElement currentStoryElement;
@@ -53,7 +55,8 @@ public class GameManager : MonoBehaviour {
 		ReadingDays,
 		Choosing,
 		Arrested,
-		Reading
+		Reading,
+		Winning
 	};
 
 	public GameState currentGameState;
@@ -117,7 +120,11 @@ public class GameManager : MonoBehaviour {
 				break;
 			case GameState.ReadingDays:
 				if (isMouseClicked) {
-					SwitchToChoiceView();
+					if (networkAmount > NETWORK_AMOUNT_TO_WIN) {
+						ChangeToWinningState();
+					} else {
+                        SwitchToChoiceView();
+					}
 				}
 				break;
 			case GameState.Reading:
@@ -289,6 +296,7 @@ public class GameManager : MonoBehaviour {
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
 		characterIntroductionInterface.SetActive(false);
+		winningInterface.SetActive(false);
 	}
 
 	void ChangeToChoiceState() {
@@ -297,6 +305,7 @@ public class GameManager : MonoBehaviour {
 		ConsequenceUI.SetActive(false);
 		overlay.SetActive(false);
 		characterIntroductionInterface.SetActive(false);
+		winningInterface.SetActive(false);
 	}
 
 	void ChangeToArrestedState() {
@@ -305,12 +314,14 @@ public class GameManager : MonoBehaviour {
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
 		characterIntroductionInterface.SetActive(false);
+		winningInterface.SetActive(false);
 	}
 
 	void ChangeToReadingDaysState() {
 		currentGameState = GameState.ReadingDays;
 		overlay.SetActive(true);
 		characterIntroductionInterface.SetActive(false);
+		winningInterface.SetActive(false);
 	}
 
 	void ChangeToIntroductionState() {
@@ -318,6 +329,7 @@ public class GameManager : MonoBehaviour {
 		introductionInterface.SetActive(true);
 		characterIntroductionInterface.SetActive(false);
 		overlay.SetActive(false);
+		winningInterface.SetActive(false);
 	}
 
 	void ChangeToReadingCharacterIntroduction() {
@@ -325,5 +337,16 @@ public class GameManager : MonoBehaviour {
 		introductionInterface.SetActive(false);
 		characterIntroductionInterface.SetActive(true);
 		overlay.SetActive(false);
+		winningInterface.SetActive(false);
+	}
+
+	void ChangeToWinningState() {
+		currentGameState = GameState.Winning;
+		introductionInterface.SetActive(false);
+		characterIntroductionInterface.SetActive(false);
+		ChoiceUI.SetActive(false);
+		ConsequenceUI.SetActive(false);
+		overlay.SetActive(false);
+		winningInterface.SetActive(true);
 	}
 }
