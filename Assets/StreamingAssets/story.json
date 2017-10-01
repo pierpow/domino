@@ -73,6 +73,7 @@
       "consequenceDescription": "L'imprimeur accepte de vous aider à condition de rester discret. ",
       "inactionConsequenceDescription": "Vous ne faites par encore suffisamment confiance à cet imprimeur pour lui partager vos projets",
       "picture": "posters",
+      "unlocksElementId": 4,
       "prerequisites": {
         "needsUnlock": false,
         "level": 3
@@ -86,6 +87,7 @@
       "consequenceDescription": "Vous sortez la nuit coller vos affiches dans toute la ville. Le lendemain, vous entendez de nombreuses conversations à ce sujet.",
       "inactionConsequenceDescription": "L'autorité était sur vos traces et vous a pris en pleine action. Une froide cellule vous accueille...",
       "picture": "tracts",
+      "unlocksElementId": 6,
       "prerequisites": {
         "needsUnlock": true,
         "level": 3
@@ -151,6 +153,7 @@
       "consequenceDescription": "Cette connaissance accepte de mettre internet à votre disposition",
       "inactionConsequenceDescription": "Vous n'êtes pas certain des convictions de cette connaissance et préferez attendre de mieux la connaitre",
       "picture": "blog-article",
+      "unlocksElementId": 15,
       "prerequisites": {
         "needsUnlock": false,
         "level": 4
@@ -164,6 +167,7 @@
       "consequenceDescription": "La pétition a atteint l'opinion publique à l'internationale, votre cause n'est plus inconnue au monde",
       "inactionConsequenceDescription": "La pétition vous semble être trop risqué à votre échelle. Vous préferez attendre d'autres occasions d'en lancer une",
       "picture": "blog-article",
+      "unlocksElementId": 14,
       "prerequisites": {
         "needsUnlock": true,
         "level": 4
@@ -190,6 +194,7 @@
       "consequenceDescription": "Votre blog fait beaucoup de bruit dans le monde, des journaux étrangers décident de reprendre vos témoignages",
       "inactionConsequenceDescription": "Des articles oui, mais vous avez trop peur que l'autorité remonte à vous. Vous laissez passer votre tour pour cette fois.",
       "picture": "blog-article",
+      "unlocksElementId": 13,
       "prerequisites": {
         "needsUnlock": true,
         "level": 4
