@@ -76,7 +76,7 @@
       "consequenceDescription": "L'imprimeur accepte de vous aider à condition de rester discret. ",
       "inactionConsequenceDescription": "Vous ne faites par encore suffisamment confiance à cet imprimeur pour lui partager vos projets",
       "gameOverMessage": "L'imprimeur vous a dénoncé à l'autorité, il ne partageait visiblement pas vos prises de position.",
-      "picture": "posters",
+      "picture": "Imprimante",
       "unlocksElementId": 4,
       "prerequisites": {
         "doableOnce": true,
@@ -92,7 +92,7 @@
       "consequenceDescription": "Vous sortez la nuit coller vos affiches dans toute la ville. Le lendemain, vous entendez de nombreuses conversations à ce sujet.",
       "inactionConsequenceDescription": "L'autorité était sur vos traces et vous a pris en pleine action. Une froide cellule vous accueille...",
       "gameOverMessage": "L'autorité était sur vos traces et vous a pris en pleine action. Une froide cellule vous accueille...",
-      "picture": "tracts",
+      "picture": "Affiche",
       "unlocksElementId": 6,
       "prerequisites": {
         "needsUnlock": true,
@@ -107,7 +107,7 @@
       "consequenceDescription": "Vous avez réussi à distribuer tous vos tracts et quelques personnes vous ont semblées être intéressées.",
       "inactionConsequenceDescription": "Distribuer des tracts dans le contexte actuel vous semble finalement trop dangereux.",
       "gameOverMessage": "L'autorité vous surveillait et vous a pris en flagrant délit. Vous êtes arrêté pour diffusion de convictions anti-gouvernementales.",
-      "picture": "blog-article",
+      "picture": "tracts",
       "prerequisites": {
         "needsUnlock": true,
         "level": 3
@@ -121,7 +121,7 @@
       "consequenceDescription": "La pétition a été efficace et a fait prendre conscience de la situation à un certain nombre de personnes.",
       "inactionConsequenceDescription": "Vous avez trop tardez pour lancer cette pétition, l'opportunité se représentera surement.",
       "gameOverMessage": "Malheureusement, le gouvernement vous avait placé sous surveillance... L'autorité vous accompagne jusqu'a votre dernière demeure.",
-      "picture": "blog-article",
+      "picture": "Script",
       "prerequisites": {
         "needsUnlock": true,
         "level": 3
@@ -135,7 +135,7 @@
       "consequenceDescription": "Après une longue réflexion, vous décidez de prendre le risque. Bien que vous ne soyez pas resté longtemps, de nombreuses personnes ont pris conscience de l'ampleur de votre cause.",
       "inactionConsequenceDescription": "Le danger est trop important pour vous permettre de sortir entreprendre une telle action à découvert. Vous préferez attendre que le risque sois moindre.",
       "gameOverMessage": "Les forces de l'autorité vous ont encerclé durant votre prestation et vous executent pour atteinte au gouvernement.",
-      "picture": "blog-article",
+      "picture": "Danse",
       "prerequisites": {
         "needsUnlock": false,
         "level": 4
