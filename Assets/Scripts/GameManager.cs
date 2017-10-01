@@ -67,13 +67,8 @@ public class GameManager : MonoBehaviour {
 		story = new Story();
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
-
-        if (File.Exists(filePath)) {
-            string dataAsJson = File.ReadAllText(filePath); 
-            story = JsonUtility.FromJson<Story>(dataAsJson);
-        } else {
-            Debug.LogError("Cannot load game data!");
-        }
+		string dataAsJson = File.ReadAllText(filePath); 
+		story = JsonUtility.FromJson<Story>(dataAsJson);
 
 		ChangeToIntroductionState();
 
