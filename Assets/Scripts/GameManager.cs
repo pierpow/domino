@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject overlay;
 	public GameObject actionInterface;
 	public GameObject characterIntroductionInterface;
+	public GameObject introductionInterface;
 
 	private Story story;
 	public StoryElement currentStoryElement;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour {
 	private List<int> alreadyDoneStories = new List<int>();
 
 	public enum GameState {
+		ReadingIntroduction,
 		ReadingCharacterIntroduction,
 		ReadingDays,
 		Choosing,
@@ -99,6 +101,11 @@ public class GameManager : MonoBehaviour {
 		bool isMouseClicked = Input.GetMouseButtonDown(0);
 
 		switch (currentGameState) {
+			case GameState.ReadingIntroduction:
+				if (isMouseClicked) {
+					ChangeToReadingCharacterIntroduction();
+				}
+				break;
 			case GameState.ReadingCharacterIntroduction:
 				if (isMouseClicked) {
 					ChangeToReadingDaysState();
@@ -283,7 +290,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void ChangeToIntroductionState() {
+		currentGameState = GameState.ReadingIntroduction;
+		introductionInterface.SetActive(true);
+		characterIntroductionInterface.SetActive(false);
+		overlay.SetActive(false);
+	}
+
+	void ChangeToReadingCharacterIntroduction() {
 		currentGameState = GameState.ReadingCharacterIntroduction;
+		introductionInterface.SetActive(false);
 		characterIntroductionInterface.SetActive(true);
 		overlay.SetActive(false);
 	}
