@@ -303,8 +303,8 @@
     },
     {
       "id": 6,
-      "picture": "police",
-      "sound": "prison",
+      "picture": "prison",
+      "sound": "game-over",
       "threshold": 100,
       "isFatal": true,
       "description": "La police vous arrête."
