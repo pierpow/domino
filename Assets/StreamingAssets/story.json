@@ -102,13 +102,27 @@
     ],
     "pitfalls": [
         {
+            "id": 1,
+            "picture": "surveillance",
+            "sound": "",
+            "threshold": 20,
+            "isFatal": false,
+            "description": "Vos actions on attiré l'attention des autorités, vous êtes désormais sous surveillance ..."
+        },
+        {
+            "id": 6,
             "picture": "police",
             "sound": "game-over",
+            "threshold": 100,
+            "isFatal": true,
             "description": "La police vous arrête ! D:"
         },
         {
+            "id": 7,
             "picture": "execution",
             "sound": "game-over",
+            "threshold": 100,
+            "isFatal": true,
             "description": "Vous vous faites exécuter :'("
         }
     ]
