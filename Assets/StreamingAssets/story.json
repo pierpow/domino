@@ -6,7 +6,7 @@
       "consequenceDescription": "Vous décidez finalement d'en parler : vos parents sont scandalisés. Cependant, votre sœur vient vous voir après la discussion pour échanger avec vous. Elle semble partager vos convictions",
       "inactionConsequenceDescription": "Le coeur lourd, vous restez silencieux. Cependant, votre soeur vient vous voir après le repas et semble partager vos convictions",
       "picture": "",
-      "gameOverMessage": "C'EST LA MORT",
+      "gameOverMessage": "C'EST LA MORT!",
       "unlocksElementId": 2,
       "prerequisites": {
         "doableOnce": true,
@@ -21,6 +21,7 @@
       "description": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
       "consequenceDescription": "Vous aimeriez partager vos idées avec quelques amis qui seraient sensibles à votre cause",
       "inactionConsequenceDescription": "Vous préferez ne pas prendre le risque de dévoiler vos convictions à vos amis",
+      "gameOverMessage": "Malheureusement un sympathisant de l'autorité faisait partie de vos contacts.",
       "picture": "",
       "prerequisites": {
         "needsUnlock": false,
@@ -34,6 +35,7 @@
       "description": "Révolté par les massacres, vous décidez d'en écrire un poème. Vous hésitez à le partager...",
       "consequenceDescription": "Vous laissez le poème sur un banc. Suite à cet acte de contestation, vous vous sentez galvanisé !",
       "inactionConsequenceDescription": "Effrayé par le risque d'être vu par les autorités, vous décidez de garder le poème pour vous.",
+      "gameOverMessage": "Un membre de l'autorité vous a vu déposer le poème.",
       "picture": "",
       "prerequisites": {
         "needsUnlock": false,
@@ -47,6 +49,7 @@
       "description": "Suffisament de personnes suivent vos idées pour envisager la création discrète d'une association de lutte contre les massacres commis par l'autorité.",
       "consequenceDescription": "Vous arrivez à réunir un petit groupe de personnes engagées. Bien qu'une partie vous est encore inconnue, vous sentez que vos actions seront plus efficaces.",
       "inactionConsequenceDescription": "Vous sentez que vous n'avez pas encore confiance en tout le monde, et reportez la création d'une association à un autre moment.",
+      "gameOverMessage": "C'EST LA MORT!",
       "picture": "",
       "prerequisites": {
         "needsUnlock": false,
@@ -60,6 +63,7 @@
       "description": "Une réunion s'organise entre les membres, vous envisagez la possibilité d'en prendre partie...",
       "consequenceDescription": "Vous avez exposé vos idées à des membres inconnus mais tout le monde a l'air de les suivre.",
       "inactionConsequenceDescrition": "Vous restez finalement en sécurité chez vous, ça sera pour une autre fois",
+      "gameOverMessage": "L'autorité avait discrètement infiltré votre organisation. On vous emprisonne pour complot contre le gouvernement.",
       "picture": "meeting",
       "prerequisites": {
         "needsUnlock": false,
@@ -73,6 +77,7 @@
       "description": "Un nouvel imprimeur s'est installé en ville, vous avez l'occasion de prendre contact avec lui pour produire des tracts ou des affiches.",
       "consequenceDescription": "L'imprimeur accepte de vous aider à condition de rester discret. ",
       "inactionConsequenceDescription": "Vous ne faites par encore suffisamment confiance à cet imprimeur pour lui partager vos projets",
+      "gameOverMessage": "L'imprimeur vous a dénoncé à l'autorité, il ne partageait visiblement pas vos prises de position.",
       "picture": "posters",
       "unlocksElementId": 4,
       "prerequisites": {
@@ -87,6 +92,7 @@
       "description": "Après avoir reçu des nouvelles affiches de l'imprimeur, une campagne d'affichage est organisée par l'association dans un climat tendu. Des volontaires sont recherchés.",
       "consequenceDescription": "Vous sortez la nuit coller vos affiches dans toute la ville. Le lendemain, vous entendez de nombreuses conversations à ce sujet.",
       "inactionConsequenceDescription": "L'autorité était sur vos traces et vous a pris en pleine action. Une froide cellule vous accueille...",
+      "gameOverMessage": "L'autorité était sur vos traces et vous a pris en pleine action. Une froide cellule vous accueille...",
       "picture": "tracts",
       "unlocksElementId": 6,
       "prerequisites": {
@@ -101,6 +107,7 @@
       "description": "L'imprimeur vous a livré des tracts, vous pouvez sortir en distribuer discrètement aux passants.",
       "consequenceDescription": "Vous avez réussi à distribuer tous vos tracts et quelques personnes vous ont semblées être intéressées.",
       "inactionConsequenceDescription": "Distribuer des tracts dans le contexte actuel vous semble finalement trop dangereux.",
+      "gameOverMessage": "L'autorité vous surveillait et vous a pris en flagrant délit. Vous êtes arrêté pour diffusion de convictions anti-gouvernementales.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": true,
@@ -114,6 +121,7 @@
       "description": "Vous avez la possibilité de lancer une pétition papier.",
       "consequenceDescription": "La pétition a été efficace et a fait prendre conscience de la situation à un certain nombre de personnes.",
       "inactionConsequenceDescription": "Vous avez trop tardez pour lancer cette pétition, l'opportunité se représentera surement.",
+      "gameOverMessage": "Malheureusement, le gouvernement vous avait placé sous surveillance... L'autorité vous accompagne jusqu'a votre dernière demeure.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": true,
@@ -127,6 +135,7 @@
       "description": "L'association propose de sortir chanter et danser pour exprimer votre révolte contre les massacres. Elle n'attend que votre autorisation pour continuer.",
       "consequenceDescription": "Après une longue réflexion, vous décidez de prendre le risque. Bien que vous ne soyez pas resté longtemps, de nombreuses personnes ont pris conscience de l'ampleur de votre cause.",
       "inactionConsequenceDescription": "Le danger est trop important pour vous permettre de sortir entreprendre une telle action à découvert. Vous préferez attendre que le risque sois moindre.",
+      "gameOverMessage": "Les forces de l'autorité vous ont encerclé durant votre prestation et vous executent pour atteinte au gouvernement.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": false,
@@ -140,6 +149,7 @@
       "description": "L'imprimeur vous donne l'occasion de publier un journal dénonçant les massacres.",
       "consequenceDescription": "Ce moyen de communication vous semble être une bonne idée, et vous vous attelez à la rédaction d'un article.",
       "inactionConsequenceDescription": "La publication d'un journal vous paraît extrêmement risqué pour le moment, vous reportez sa sortie à plus tard.",
+      "gameOverMessage": "L'article a dépassé les limites, l'autorité vous exécute comme exemple.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": false,
@@ -153,6 +163,7 @@
       "description": "Une connaissance a un accès à internet qu'il pourrait être judicieux d'utiliser aux fins de l'association",
       "consequenceDescription": "Cette connaissance accepte de mettre internet à votre disposition",
       "inactionConsequenceDescription": "Vous n'êtes pas certain des convictions de cette connaissance et préferez attendre de mieux la connaitre",
+      "gameOverMessage": "Malheureusement, cette connaissance savait que vous étiez surveillé. L'autorité débarque chez vous et vous éxecute sans autre forme de procès.",
       "picture": "blog-article",
       "unlocksElementId": 15,
       "prerequisites": {
@@ -167,6 +178,7 @@
       "description": "Vous avez la possibilité de lancer une pétition via les réseaux sociaux, mais hésitez à vous y risquer...",
       "consequenceDescription": "La pétition a atteint l'opinion publique à l'internationale, votre cause n'est plus inconnue au monde",
       "inactionConsequenceDescription": "La pétition vous semble être trop risqué à votre échelle. Vous préferez attendre d'autres occasions d'en lancer une",
+      "gameOverMessage": "L'autorité a remonté votre adresse internet et vous interrompt. Vous êtes emmené puis executé.",
       "picture": "blog-article",
       "unlocksElementId": 14,
       "prerequisites": {
@@ -181,6 +193,7 @@
       "description": "Un membre vous offre un camescope, vous songez à utiliser internet pour publier des videos du massacre...",
       "consequenceDescription": "Vous vous décidez à publier une video, qui produit un profond impact dans le monde",
       "inactionConsequenceDescription": "Internet est peu sûr et vous redoutez que l'autorité puisse vous retrouver. Vous préferez attendre avant de mettre à jour des videos",
+      "gameOverMessage": "L'autorité était très alerte sur vos actions et la video n'a fait que confirmer leurs doutes. Vous êtes retrouvé puis exécuté.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": true,
@@ -194,6 +207,7 @@
       "description": "La personne qui devrait être rédacteur pour le blog de votre association s'est désisté. Le poste est à pourvoir.",
       "consequenceDescription": "Votre blog fait beaucoup de bruit dans le monde, des journaux étrangers décident de reprendre vos témoignages",
       "inactionConsequenceDescription": "Des articles oui, mais vous avez trop peur que l'autorité remonte à vous. Vous laissez passer votre tour pour cette fois.",
+      "gameOverMessage": "L'autorité n'a pas eu de mal à trouver l'auteur de ces articles, et vous assassine froidement dès le lendemain.",
       "picture": "blog-article",
       "unlocksElementId": 13,
       "prerequisites": {
@@ -208,6 +222,7 @@
       "description": "Le mouvement a pris une amplitude assez importante pour vous permettre d'organiser une grande manifestation...",
       "consequenceDescription": "Une manifestation est organisée et vous observez un impact significatif. De nombreuses personnes rejoignent votre cause",
       "inactionConsequenceDescription": "Vous connaissez trop bien l'autorité pour penser quelle vous laissera manifester sans encombre. Vous préferez rester calme pour le moment.",
+      "gameOverMessage": "L'autorité vous surveillait de trop près, vous êtes arrêté et exécuté peu après avoir finis l'organisation de la manifestation.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": false,
@@ -221,6 +236,7 @@
       "description": "L'ampleur de votre association et l'accès à internet vous donnent l'opportunité de déclencher un Twitter Storm pour protester à l'échelle nationale.",
       "consequenceDescription": "Le Twitter Storm vous semble être un bon moyen d'exprimer votre indignation. Le gouvernement prend conscience de l'impact qu'a suscité votre cause",
       "inactionConsequenceDescription": "Peut-être est-il encore un peu tôt pour déclencher ce genre de méthode, vous préferez vous réserver",
+      "gameOverMessage": "L'autorité n'a pas eu de mal à comprendre que vous étiez responsable de toute cette agitation. Ils vous executent pour trouble de l'opinion publique.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": false,
@@ -234,6 +250,7 @@
       "description": "Les médias audiovisuels étant muets sur le sujet, vous envisagez la possibilté de sortir des écrans dans la rue montrant des videos des massacres.",
       "consequenceDescription": "Les écrans ont été extrêmement efficaces pour avertir la population des massacres en cours. Votre cause a maintenant une ampleur sans précedent.",
       "inactionConsequenceDescription": "Le risque d'intervention des forces de l'autorité vous paraît bien trop élevé pour réliser cette action. Vous attendez un autre moment.",
+      "gameOverMessage": "Les écrans sortis dans tout le pays ont alerté les autorités, vous êtes arrêté puis exécuté violemment.",
       "picture": "blog-article",
       "prerequisites": {
         "needsUnlock": false,
