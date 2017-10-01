@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void GenerateAge() {
-		age = 22;
+		age = Random.Range(18, 27);
 	}
 
 	void GenerateColor() {
