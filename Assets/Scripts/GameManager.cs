@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	const int MAX_TIMER_VALUE = 5;
-	const int NETWORK_AMOUNT_TO_WIN = 50;
+	const int NETWORK_AMOUNT_TO_WIN = 500;
 	const string DEFAULT_INACTION_TEXT = "Vous ne faites rien.";
 	const string DAYS_TEXT = "Jour {0}";
 
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
 	private int currentLevel = 0;
 	private List<int> unlockedStories = new List<int>();
 	private List<int> alreadyDoneStories = new List<int>();
+	private List<int> alreadyDonePitfalls = new List<int>();
 
 	public enum GameState {
 		ReadingIntroduction,
@@ -134,11 +135,16 @@ public class GameManager : MonoBehaviour {
 				break;
 			case GameState.Arrested:
 				if (isMouseClicked) {
-					playerScript.NewPlayer();
-					ResetRisk();
-					DegradeNetworkAfterDeath();
-                    musicScript.PlayMusicForLevel(riskAmount);
-					ChangeToReadingCharacterIntroduction();
+					if (currentPitfall.isFatal) {
+						playerScript.NewPlayer();
+						ResetRisk();
+						DegradeNetworkAfterDeath();
+						alreadyDonePitfalls.Clear();
+						musicScript.PlayMusicForLevel(riskAmount);
+						ChangeToReadingCharacterIntroduction();
+					} else {
+                        SwitchToChoiceView();
+					}
 				}
 				break;
 			default:
@@ -216,16 +222,37 @@ public class GameManager : MonoBehaviour {
 		dayNumber += 1;
 		daysTextInOverlay.text = string.Format(DAYS_TEXT, dayNumber.ToString());
 		
+		currentStoryElement = null;
+		currentPitfall = null;
 
-        // TODO
-        int caughtScore = Random.Range(40, 100);
-		if (riskAmount > caughtScore) {
-			currentStoryElement = null;
-			int numberOfPitfalls = story.pitfalls.Length;
-			int pitfallIndex = Random.Range(0, numberOfPitfalls);
+		// Choose accessible pitfall
+		// HORRIBLE CODE INCOMING
+		List<Pitfall> accessiblePitfalls = new List<Pitfall>();
+		int numberOfPitfalls = story.pitfalls.Length;
+
+		for (int i = 0; i < numberOfPitfalls; i++) {
+			Pitfall current = story.pitfalls[i];
+			bool isRiskHighEnough = current.threshold <= riskAmount;
+			bool isPitfallAlreadyDone = alreadyDonePitfalls.Contains(current.id);
+
+			if (isRiskHighEnough && !isPitfallAlreadyDone) {
+				accessiblePitfalls.Add(current);
+			}
+		}
+
+		int numberOfAccessiblePitfalls = accessiblePitfalls.Count;
+
+		if (numberOfAccessiblePitfalls > 0) {
+			// TODO not supposed to be random but fuck it
+			int pitfallIndex = Random.Range(0, numberOfAccessiblePitfalls);
 			currentPitfall = story.pitfalls[pitfallIndex];
-		} else {
-			currentPitfall = null;
+
+			alreadyDonePitfalls.Add(currentPitfall.id);
+			
+			return;
+		}
+
+		if (currentPitfall == null) {
 			int numberOfStoryElements = story.storyElements.Length;
 
 			List<StoryElement> accessibleStoryElements = new List<StoryElement>();
