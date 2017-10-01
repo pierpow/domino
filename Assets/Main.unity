@@ -2264,6 +2264,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1707194959}
+    - target: {fileID: 114671717125545614, guid: 0c4b40e2f6a874968b20ac7c2b9a068e,
+        type: 2}
+      propertyPath: characterIntroductionInterface
+      value: 
+      objectReference: {fileID: 1018529296}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c4b40e2f6a874968b20ac7c2b9a068e, type: 2}
   m_IsPrefabParent: 0
@@ -2396,7 +2401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1282015765301720, guid: f7c8811baeef846fe8c236913ee4591b, type: 2}
       propertyPath: m_Name
-      value: IntroductionInterface
+      value: CharacterIntroductionInterface
       objectReference: {fileID: 0}
     - target: {fileID: 223846607585344684, guid: f7c8811baeef846fe8c236913ee4591b,
         type: 2}

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject overlay;
 	public GameObject actionInterface;
-	public GameObject introductionInterface;
+	public GameObject characterIntroductionInterface;
 
 	private Story story;
 	public StoryElement currentStoryElement;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 	private List<int> alreadyDoneStories = new List<int>();
 
 	public enum GameState {
-		ReadingIntroduction,
+		ReadingCharacterIntroduction,
 		ReadingDays,
 		Choosing,
 		Arrested,
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 	void Awake()
 	{
 		overlay.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
-		introductionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+		characterIntroductionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
 		actionInterface.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
 
 		musicScript = musicManager.GetComponent<MusicScript>();
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
 
 		story = new Story();
 
-        string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
+		string filePath = Path.Combine(Application.streamingAssetsPath, "story.json");
 		string dataAsJson = File.ReadAllText(filePath); 
 		story = JsonUtility.FromJson<Story>(dataAsJson);
 
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour {
 		bool isMouseClicked = Input.GetMouseButtonDown(0);
 
 		switch (currentGameState) {
-			case GameState.ReadingIntroduction:
+			case GameState.ReadingCharacterIntroduction:
 				if (isMouseClicked) {
 					ChangeToReadingDaysState();
 				}
@@ -257,7 +257,7 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
-		introductionInterface.SetActive(false);
+		characterIntroductionInterface.SetActive(false);
 	}
 
 	void ChangeToChoiceState() {
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(true);
 		ConsequenceUI.SetActive(false);
 		overlay.SetActive(false);
-		introductionInterface.SetActive(false);
+		characterIntroductionInterface.SetActive(false);
 	}
 
 	void ChangeToArrestedState() {
@@ -273,18 +273,18 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
-		introductionInterface.SetActive(false);
+		characterIntroductionInterface.SetActive(false);
 	}
 
 	void ChangeToReadingDaysState() {
 		currentGameState = GameState.ReadingDays;
 		overlay.SetActive(true);
-		introductionInterface.SetActive(false);
+		characterIntroductionInterface.SetActive(false);
 	}
 
 	void ChangeToIntroductionState() {
-		currentGameState = GameState.ReadingIntroduction;
-		introductionInterface.SetActive(true);
+		currentGameState = GameState.ReadingCharacterIntroduction;
+		characterIntroductionInterface.SetActive(true);
 		overlay.SetActive(false);
 	}
 }
