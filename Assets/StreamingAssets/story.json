@@ -6,6 +6,7 @@
       "consequenceDescription": "Vous décidez finalement d'en parler : vos parents sont scandalisés. Cependant, votre sœur vient vous voir après la discussion pour échanger avec vous. Elle semble partager vos convictions",
       "inactionConsequenceDescription": "Le coeur lourd, vous restez silencieux. Cependant, votre soeur vient vous voir après le repas et semble partager vos convictions",
       "picture": "",
+      "gameOverMessage": "C'EST LA MORT",
       "unlocksElementId": 2,
       "prerequisites": {
         "doableOnce": true,
