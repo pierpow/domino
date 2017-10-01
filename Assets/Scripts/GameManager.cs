@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	const int MAX_TIMER_VALUE = 5;
-	const int NETWORK_AMOUNT_TO_WIN = 500;
+	const int NETWORK_AMOUNT_TO_WIN = 800;
 	const string DEFAULT_INACTION_TEXT = "Vous ne faites rien.";
 	const string DAYS_TEXT = "Jour {0}";
 
@@ -242,13 +242,16 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
+		Debug.Log(alreadyDonePitfalls.Count);
 		int numberOfAccessiblePitfalls = accessiblePitfalls.Count;
 
 		if (numberOfAccessiblePitfalls > 0) {
 			// TODO not supposed to be random but fuck it
-			int pitfallIndex = Random.Range(0, numberOfAccessiblePitfalls);
-			currentPitfall = story.pitfalls[pitfallIndex];
+			int pitfallIndex = accessiblePitfalls.Count - 1;
+			currentPitfall = accessiblePitfalls[pitfallIndex];
 
+			Debug.Log("add ");
+			Debug.Log(currentPitfall.id);
 			alreadyDonePitfalls.Add(currentPitfall.id);
 			
 			return;
