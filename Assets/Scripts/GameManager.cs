@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject ChoiceUI;
 	public GameObject ConsequenceUI;
 
+	public GameObject player;
+
 	public Text descriptionText;
 	public Text networkText;
 	public Text riskText;
@@ -76,6 +78,9 @@ public class GameManager : MonoBehaviour {
 
 		timerBar.maxValue = MAX_TIMER_VALUE;
 		timerBar.value = timerBar.maxValue;
+
+		PlayerScript playerScript = player.GetComponent<PlayerScript>();
+		playerScript.ChangeColor(new Color(0, 1, 0, 1));
 	}
 
 	void FixedUpdate()
