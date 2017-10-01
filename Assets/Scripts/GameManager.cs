@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	private Image actionImageComponent;
 
 	public GameObject overlay;
+	public GameObject introductionInterface;
 
 	private Story story;
 	public StoryElement currentStoryElement;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour {
 	private List<int> alreadyDoneStories = new List<int>();
 
 	public enum GameState {
+		ReadingIntroduction,
 		ReadingDays,
 		Choosing,
 		Arrested,
@@ -65,7 +67,7 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Cannot load game data!");
         }
 
-		ChangeToReadingDaysState();
+		ChangeToIntroductionState();
 
 		actionImageComponent = actionImage.GetComponent<Image>();
 		actionImage.SetActive(false);
@@ -91,6 +93,11 @@ public class GameManager : MonoBehaviour {
 		bool isMouseClicked = Input.GetMouseButtonDown(0);
 
 		switch (currentGameState) {
+			case GameState.ReadingIntroduction:
+				if (isMouseClicked) {
+					ChangeToReadingDaysState();
+				}
+				break;
 			case GameState.ReadingDays:
 				if (isMouseClicked) {
 					SwitchToChoiceView();
@@ -244,6 +251,7 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
+		introductionInterface.SetActive(false);
 	}
 
 	void ChangeToChoiceState() {
@@ -251,6 +259,7 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(true);
 		ConsequenceUI.SetActive(false);
 		overlay.SetActive(false);
+		introductionInterface.SetActive(false);
 	}
 
 	void ChangeToArrestedState() {
@@ -258,10 +267,18 @@ public class GameManager : MonoBehaviour {
 		ChoiceUI.SetActive(false);
 		ConsequenceUI.SetActive(true);
 		overlay.SetActive(false);
+		introductionInterface.SetActive(false);
 	}
 
 	void ChangeToReadingDaysState() {
 		currentGameState = GameState.ReadingDays;
 		overlay.SetActive(true);
+		introductionInterface.SetActive(false);
+	}
+
+	void ChangeToIntroductionState() {
+		currentGameState = GameState.ReadingIntroduction;
+		introductionInterface.SetActive(true);
+		overlay.SetActive(false);
 	}
 }
